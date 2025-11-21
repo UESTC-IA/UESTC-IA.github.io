@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UESTC-IA 协会网站</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            max-width: 800px;
+            width: 100%;
+            padding: 40px;
+            text-align: center;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        
+        .status {
+            background: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            text-align: left;
+        }
+        
+        .status-item {
+            margin: 8px 0;
+            font-weight: bold;
+        }
+        
+        .status-value {
+            font-weight: normal;
+            color: #2c3e50;
+        }
+        
+        .test-section {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .footer {
+            margin-top: 30px;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 部署成功！</h1>
+        <p class="subtitle">UESTC-IA 协会网站测试页面</p>
+        
+        <div class="status">
+            <div class="status-item">部署状态: <span class="status-value">✅ 成功</span></div>
+            <div class="status-item">服务器时间: <span class="status-value" id="serverTime"></span></div>
+            <div class="status-item">页面加载: <span class="status-value" id="loadTime">0.00s</span></div>
+        </div>
+        
+        <div class="test-section">
+            <h2>功能测试</h2>
+            <p>点击下方按钮测试页面交互功能</p>
+            <button class="btn" onclick="showAlert()">测试按钮</button>
+            <a href="#" class="btn" onclick="changeTheme()">切换主题</a>
+        </div>
+        
+        <div class="footer">
+            <p>© 2024 UESTC-IA 协会 | 这是一个测试页面</p>
+            <p id="jsStatus">JavaScript: ✅ 已启用</p>
+        </div>
+    </div>
+
+    <script>
+        // 记录页面加载时间
+        const loadStartTime = performance.now();
+        
+        // 设置服务器时间
+        function updateServerTime() {
+            const now = new Date();
+            const options = { 
+                year: 'numeric', 
+                month: '2-digit', 
+                day: '2-digit',
+                hour: '2-digit', 
+                minute: '2-digit', 
+                second: '2-digit',
+                hour12: false
+            };
+            document.getElementById('serverTime').textContent = now.toLocaleString('zh-CN', options);
+        }
+        
+        // 计算加载时间
+        function calculateLoadTime() {
+            const loadEndTime = performance.now();
+            const loadTime = ((loadEndTime - loadStartTime) / 1000).toFixed(2);
+            document.getElementById('loadTime').textContent = `${loadTime}s`;
+        }
+        
+        // 测试按钮
+        function showAlert() {
+            alert('🎉 按钮功能正常！\n\n页面交互测试成功！');
+        }
+        
+        // 切换主题
+        function changeTheme() {
+            const body = document.body;
+            const container = document.querySelector('.container');
+            
+            if (body.style.background.includes('linear-gradient')) {
+                body.style.background = '#2c3e50';
+                container.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
+            } else {
+                body.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+                container.style.boxShadow = '0 10px 30px rgba(0,0,0,0.3)';
+            }
+        }
+        
+        // 检查JavaScript状态
+        function checkJSStatus() {
+            try {
+                document.getElementById('jsStatus').textContent = 'JavaScript: ✅ 功能正常';
+            } catch (e) {
+                document.getElementById('jsStatus').textContent = 'JavaScript: ❌ 异常';
+            }
+        }
+        
+        // 页面加载完成后执行
+        window.addEventListener('load', function() {
+            updateServerTime();
+            calculateLoadTime();
+            checkJSStatus();
+            
+            // 每秒更新时间
+            setInterval(updateServerTime, 1000);
+        });
+    </script>
+</body>
+</html>
