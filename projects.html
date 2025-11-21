@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>项目与成果 | UESTC IA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/main.js" defer></script>
+</head>
+<body class="pt-24 bg-slate-50">
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-screen mb-20">
+
+        <div class="text-center mb-16">
+            <h1 class="text-3xl font-bold text-slate-800 mb-2">Projects & Achievements</h1>
+            <p class="text-slate-500">打破壁垒，协同共创，见证解决真实世界问题的创新力量。</p>
+        </div>
+
+        <!-- 1. 创新实验室 (Innovation Labs - 在研项目) -->
+        <section class="mb-20">
+            <div class="flex items-center justify-between mb-8">
+                <h2 class="text-xl font-bold text-slate-800 flex items-center">
+                    <i class="fas fa-flask text-cyan-600 mr-3"></i> 创新实验室 (In Progress)
+                </h2>
+                <span class="text-xs text-slate-400">显示部分精选项目</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Project Card 1 (Recruiting) -->
+                <div class="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-lg hover:border-cyan-200 transition duration-300 group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-cyan-600 text-white text-[10px] font-bold px-2 py-1 rounded-bl-lg">
+                        招募中
+                    </div>
+                    <div class="text-xs font-bold text-slate-400 uppercase mb-2">Health Track</div>
+                    <h3 class="text-lg font-bold text-slate-800 mb-3 group-hover:text-cyan-600 transition">基于 EEG 的情绪识别系统</h3>
+                    <p class="text-sm text-slate-600 mb-4 line-clamp-3">
+                        利用深度学习分析脑电信号，构建实时的情绪监测系统。目前需要熟悉 PyTorch 的同学加入模型优化组。
+                    </p>
+                    <div class="border-t border-slate-100 pt-4 flex items-center justify-between">
+                        <span class="text-xs text-slate-500"><i class="fas fa-user-tie mr-1"></i> 指导: 尧德中 教授</span>
+                        <a href="#" class="text-xs font-bold text-cyan-600 hover:underline">详情 &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 (Ongoing) -->
+                <div class="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-lg transition duration-300 group">
+                    <div class="text-xs font-bold text-slate-400 uppercase mb-2">Engineering Track</div>
+                    <h3 class="text-lg font-bold text-slate-800 mb-3">具身智能机器人抓取算法</h3>
+                    <p class="text-sm text-slate-600 mb-4 line-clamp-3">
+                        结合计算机视觉与强化学习，提升机械臂在非结构化环境下的抓取成功率。
+                    </p>
+                    <div class="border-t border-slate-100 pt-4 flex items-center justify-between">
+                        <span class="text-xs text-slate-500"><i class="fas fa-users mr-1"></i> 团队: 5人 (满员)</span>
+                        <a href="#" class="text-xs font-bold text-slate-400 hover:text-slate-600">查看进度</a>
+                    </div>
+                </div>
+                
+                <!-- More cards... -->
+            </div>
+        </section>
+
+        <!-- 2. 成果荣誉榜 (Achievement Hall) -->
+        <section>
+            <h2 class="text-xl font-bold text-slate-800 flex items-center mb-8">
+                <i class="fas fa-medal text-cyan-600 mr-3"></i> 荣誉榜单
+            </h2>
+
+            <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+                <div class="divide-y divide-slate-100">
+                    <!-- Item -->
+                    <div class="p-5 flex flex-col md:flex-row md:items-center gap-4 hover:bg-slate-50 transition">
+                        <div class="flex-shrink-0 w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center">
+                            <i class="fas fa-file-contract text-lg"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <h4 class="text-base font-bold text-slate-800">发表高水平学术论文 (IEEE TBME)</h4>
+                            <p class="text-sm text-slate-500 mt-1">Paper: "Cross-subject EEG Emotion Recognition based on..."</p>
+                        </div>
+                        <div class="text-xs font-bold text-slate-400 whitespace-nowrap">2024.10</div>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="p-5 flex flex-col md:flex-row md:items-center gap-4 hover:bg-slate-50 transition">
+                        <div class="flex-shrink-0 w-12 h-12 bg-yellow-50 text-yellow-600 rounded-full flex items-center justify-center">
+                            <i class="fas fa-trophy text-lg"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <h4 class="text-base font-bold text-slate-800">全国大学生集成电路创新创业大赛 一等奖</h4>
+                            <p class="text-sm text-slate-500 mt-1">Engineering 方向 - 芯片设计专项小组</p>
+                        </div>
+                        <div class="text-xs font-bold text-slate-400 whitespace-nowrap">2024.08</div>
+                    </div>
+
+                     <!-- Item -->
+                     <div class="p-5 flex flex-col md:flex-row md:items-center gap-4 hover:bg-slate-50 transition">
+                        <div class="flex-shrink-0 w-12 h-12 bg-purple-50 text-purple-600 rounded-full flex items-center justify-center">
+                            <i class="fas fa-code text-lg"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <h4 class="text-base font-bold text-slate-800">软件著作权 2 项</h4>
+                            <p class="text-sm text-slate-500 mt-1">智慧医疗辅助诊断系统 V1.0</p>
+                        </div>
+                        <div class="text-xs font-bold text-slate-400 whitespace-nowrap">2024.06</div>
+                    </div>
+                </div>
+                <div class="bg-slate-50 p-3 text-center border-t border-slate-100">
+                    <a href="#" class="text-xs font-bold text-cyan-600 hover:text-cyan-700">查看年度完整报告 &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>

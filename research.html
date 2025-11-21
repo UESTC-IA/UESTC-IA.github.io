@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <title>核心方向 | UESTC IA</title>
+    <!-- 引用相同的 Head 资源 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/main.js" defer></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="pt-24">
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-screen" x-data="{ activeTab: 'ai' }">
+        
+        <!-- Header -->
+        <div class="text-center mb-16">
+            <h1 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Research Tracks</h1>
+            <p class="text-slate-500 max-w-2xl mx-auto">五大核心引擎，以人工智能为驱动，打破学科壁垒。</p>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-8 items-start">
+            <!-- 侧边导航 (Tabs) -->
+            <div class="md:w-1/4 flex flex-col space-y-2 sticky top-24">
+                <!-- 特殊强调: AI Methods -->
+                <button @click="activeTab = 'ai'" 
+                    :class="activeTab === 'ai' ? 'bg-slate-800 text-white shadow-lg' : 'bg-white text-slate-600 hover:bg-slate-50'"
+                    class="text-left px-6 py-4 rounded-xl font-semibold transition-all duration-200 flex items-center justify-between border border-transparent">
+                    <span>AI Methods</span>
+                    <i class="fas fa-microchip" :class="activeTab === 'ai' ? 'text-cyan-400' : 'text-slate-400'"></i>
+                </button>
+
+                <!-- 其他方向 -->
+                <button @click="activeTab = 'science'" 
+                    :class="activeTab === 'science' ? 'border-cyan-600 bg-white shadow-sm' : 'border-transparent hover:bg-white/50'"
+                    class="text-left px-6 py-4 rounded-r-xl border-l-4 font-medium text-slate-600 transition-all">
+                    Science 方向
+                </button>
+                <button @click="activeTab = 'health'" 
+                    :class="activeTab === 'health' ? 'border-cyan-600 bg-white shadow-sm' : 'border-transparent hover:bg-white/50'"
+                    class="text-left px-6 py-4 rounded-r-xl border-l-4 font-medium text-slate-600 transition-all">
+                    Health 方向
+                </button>
+                <button @click="activeTab = 'engineering'" 
+                    :class="activeTab === 'engineering' ? 'border-cyan-600 bg-white shadow-sm' : 'border-transparent hover:bg-white/50'"
+                    class="text-left px-6 py-4 rounded-r-xl border-l-4 font-medium text-slate-600 transition-all">
+                    Engineering 方向
+                </button>
+                <button @click="activeTab = 'finance'" 
+                    :class="activeTab === 'finance' ? 'border-cyan-600 bg-white shadow-sm' : 'border-transparent hover:bg-white/50'"
+                    class="text-left px-6 py-4 rounded-r-xl border-l-4 font-medium text-slate-600 transition-all">
+                    Finance 方向
+                </button>
+            </div>
+
+            <!-- 内容区域 -->
+            <div class="md:w-3/4 bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-slate-100 min-h-[500px]">
+                
+                <!-- Tab 1: AI Methods -->
+                <div x-show="activeTab === 'ai'" x-transition.opacity.duration.300ms>
+                    <div class="flex items-center gap-3 mb-6 pb-6 border-b border-slate-100">
+                        <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded text-xs font-bold uppercase">Base Layer</span>
+                        <h2 class="text-2xl font-bold text-slate-800">AI Methods | 技术底座</h2>
+                    </div>
+                    <p class="text-slate-600 leading-relaxed mb-8 text-lg">
+                        作为整个社团的“发动机”，AI Methods 方向聚焦人工智能驱动的创新实践，为其他各方向提供核心技术支持和方法论。我们不仅研究算法，更注重算法在真实场景中的泛化能力。
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="p-6 bg-slate-50 rounded-xl border border-slate-100">
+                            <h3 class="font-bold text-slate-800 mb-3 flex items-center"><i class="fas fa-bullseye text-cyan-600 mr-2"></i> 核心课题</h3>
+                            <ul class="space-y-2 text-sm text-slate-600">
+                                <li>• 深度学习模型优化与压缩</li>
+                                <li>• 多模态数据融合 (Text-Image-Audio)</li>
+                                <li>• 可解释性 AI (XAI) 研究</li>
+                            </ul>
+                        </div>
+                        <div class="p-6 bg-slate-50 rounded-xl border border-slate-100">
+                            <h3 class="font-bold text-slate-800 mb-3 flex items-center"><i class="fas fa-tools text-cyan-600 mr-2"></i> 技术栈</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-white border border-slate-200 rounded text-xs text-slate-500">PyTorch</span>
+                                <span class="px-2 py-1 bg-white border border-slate-200 rounded text-xs text-slate-500">LLM Fine-tuning</span>
+                                <span class="px-2 py-1 bg-white border border-slate-200 rounded text-xs text-slate-500">CUDA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 2: Science (示例) -->
+                <div x-show="activeTab === 'science'" style="display:none" x-transition.opacity.duration.300ms>
+                    <div class="flex items-center gap-3 mb-6 pb-6 border-b border-slate-100">
+                        <span class="bg-cyan-100 text-cyan-700 px-3 py-1 rounded text-xs font-bold uppercase">Application</span>
+                        <h2 class="text-2xl font-bold text-slate-800">Science | 计算科学</h2>
+                    </div>
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        探索 AI for Science 的无限可能，利用深度学习加速新材料发现、蛋白质结构预测以及复杂物理系统的模拟。
+                    </p>
+                    <!-- 更多内容... -->
+                </div>
+
+                <!-- 其他 Tab 内容略，结构相同 -->
+            </div>
+        </div>
+    </main>
+</body>
+</html>

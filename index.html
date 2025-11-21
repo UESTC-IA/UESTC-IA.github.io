@@ -1,369 +1,122 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>交叉学科协会 | Interdisciplinary Association</title>
+    <title>首页 | UESTC Interdisciplinary Association</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/main.js" defer></script>
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        .carousel-slide {
+            transition: opacity 0.7s ease-in-out;
+            will-change: opacity;
         }
-        
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f5f7fa;
+        .carousel-slide:not(.active) {
+            opacity: 0;
+            pointer-events: none;
         }
-        
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: white;
-            text-decoration: none;
-        }
-        
-        .logo span {
-            color: #ffd700;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 2rem;
-        }
-        
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: #ffd700;
-        }
-        
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            padding: 2rem;
-        }
-        
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        }
-        
-        .btn {
-            display: inline-block;
-            background: #ffd700;
-            color: #333;
-            padding: 0.8rem 2rem;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: bold;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255,215,0,0.4);
-        }
-        
-        section {
-            padding: 4rem 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: #333;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 2px;
-        }
-        
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .feature-card {
-            background: white;
-            border-radius: 10px;
-            padding: 2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            text-align: center;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-        }
-        
-        .feature-icon {
-            font-size: 3rem;
-            color: #667eea;
-            margin-bottom: 1rem;
-        }
-        
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-        
-        footer {
-            background: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 2rem;
-        }
-        
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-        
-        .footer-section {
-            flex: 1;
-            min-width: 200px;
-        }
-        
-        .footer-section h3 {
-            margin-bottom: 1rem;
-            color: #ffd700;
-        }
-        
-        .footer-section ul {
-            list-style: none;
-        }
-        
-        .footer-section ul li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .footer-section a {
-            color: #bdc3c7;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-section a:hover {
-            color: #ffd700;
-        }
-        
-        .copyright {
-            margin-top: 2rem;
-            padding-top: 1rem;
-            border-top: 1px solid #34495e;
-            color: #bdc3c7;
-        }
-        
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .footer-content {
-                flex-direction: column;
-            }
+        .carousel-slide.active {
+            opacity: 1;
         }
     </style>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <nav>
-                <a href="#" class="logo">交叉<span>学科协会</span></a>
-                <ul class="nav-links">
-                    <li><a href="#about">关于</a></li>
-                    <li><a href="#activities">活动</a></li>
-                    <li><a href="#members">会员</a></li>
-                    <li><a href="#contact">联系</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<body class="pt-24">
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>交叉学科协会</h1>
-            <p>连接不同学科，激发创新思维，推动跨领域合作与发展</p>
-            <a href="#about" class="btn">了解我们</a>
-        </div>
-    </section>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-screen">
+                
+        <!-- 1. Hero Carousel (全宽轮播容器) -->
+        <section 
+          class="relative w-full h-[700px] rounded-2xl overflow-hidden shadow-inner mb-12"
+          x-data="{
+            activeSlide: 2,
+            totalSlides: 2,
+            autoplayInterval: null,
+            startAutoplay() {
+              this.autoplayInterval = setInterval(() => {
+                this.activeSlide = this.activeSlide === this.totalSlides ? 1 : this.activeSlide + 1;
+              }, 5000);
+            },
+            stopAutoplay() {
+              if (this.autoplayInterval) {
+                clearInterval(this.autoplayInterval);
+                this.autoplayInterval = null;
+              }
+            }
+          }"
+          x-init="startAutoplay()"
+          @mouseenter="stopAutoplay()"
+          @mouseleave="startAutoplay()"
+        >
+          <!-- 所有图片始终渲染，通过 opacity 切换 -->
+          <div 
+            class="absolute inset-0 bg-cover bg-center carousel-slide"
+            :class="{ 'active': activeSlide === 1 }"
+            style="background-image: url('assets/images/carousel/core_members.jpg');"
+          ></div>
+          <div 
+            class="absolute inset-0 bg-cover bg-center carousel-slide"
+            :class="{ 'active': activeSlide === 2 }"
+            style="background-image: url('assets/images/carousel/challenge.png');"
+          ></div>
 
-    <section id="about" class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>关于我们</h2>
-            </div>
-            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-                <p>交叉学科协会成立于2020年，致力于搭建不同学科之间的交流桥梁。我们汇聚来自计算机科学、生物医学、社会科学、工程技术和艺术设计等领域的优秀人才，通过定期举办学术研讨会、工作坊和创新项目，促进跨学科思想碰撞与合作。</p>
-                <p>我们的愿景是成为推动学科交叉融合的重要平台，培养具有复合型知识结构和创新能力的未来人才。</p>
-            </div>
-        </div>
-    </section>
+          <!-- 轮播指示器 -->
+          <div class="absolute bottom-6 left-0 right-0 flex justify-center space-x-3">
+            <button 
+              @click="activeSlide = 1; stopAutoplay(); startAutoplay()" 
+              :class="activeSlide === 1 ? 'bg-cyan-600 w-8' : 'bg-slate-300 w-2'" 
+              class="h-2 rounded-full transition-all"
+            ></button>
+            <button 
+              @click="activeSlide = 2; stopAutoplay(); startAutoplay()" 
+              :class="activeSlide === 2 ? 'bg-cyan-600 w-8' : 'bg-slate-300 w-2'" 
+              class="h-2 rounded-full transition-all"
+            ></button>
+          </div>
+        </section>
 
-    <section id="activities" class="section" style="background-color: #e8edf5;">
-        <div class="container">
-            <div class="section-title">
-                <h2>我们的活动</h2>
-            </div>
-            <div class="features">
-                <div class="feature-card">
-                    <div class="feature-icon">📚</div>
-                    <h3>学术研讨会</h3>
-                    <p>每月举办跨学科主题研讨会，邀请各领域专家学者分享前沿研究成果，促进学术交流与思想碰撞。</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💡</div>
-                    <h3>创新工作坊</h3>
-                    <p>定期组织实践性工作坊，涵盖人工智能、生物信息学、数字人文等交叉领域，提供动手实践机会。</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🤝</div>
-                    <h3>合作项目</h3>
-                    <p>支持会员发起跨学科合作项目，提供资源对接、导师指导和资金支持，推动创新成果转化。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="members" class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>加入我们</h2>
-            </div>
-            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-                <p>我们欢迎来自各个学科背景的学生、教师和研究人员加入协会。无论你是对跨学科研究充满热情的初学者，还是已经在交叉领域有所建树的专家，都能在这里找到属于自己的位置。</p>
-                <p style="margin-top: 1.5rem; font-weight: bold; color: #667eea;">
-                    会员权益包括：参与所有活动、获得项目支持、拓展学术网络、提升跨领域能力
-                </p>
-                <a href="#contact" class="btn" style="margin-top: 2rem; display: inline-block;">申请加入</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section" style="background-color: #e8edf5;">
-        <div class="container">
-            <div class="section-title">
-                <h2>联系我们</h2>
-            </div>
-            <div style="text-align: center; max-width: 600px; margin: 0 auto;">
-                <p>📧 association.interdisciplinary@university.edu</p>
-                <p>📱 +86 123 4567 8900</p>
-                <p>🏢 大学城校区学术交流中心A座301室</p>
-                <p style="margin-top: 1rem;">
-                    <a href="https://github.com/UESTC-IA" target="_blank" style="color: #667eea; text-decoration: none; font-weight: bold;">
-                        GitHub组织主页
-                    </a>
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>交叉学科协会</h3>
-                    <p>连接不同学科，激发创新思维，推动跨领域合作与发展</p>
-                </div>
-                <div class="footer-section">
-                    <h3>快速链接</h3>
-                    <ul>
-                        <li><a href="#about">关于我们</a></li>
-                        <li><a href="#activities">活动中心</a></li>
-                        <li><a href="#members">会员服务</a></li>
-                        <li><a href="#contact">联系我们</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>关注我们</h3>
-                    <ul>
-                        <li><a href="#" target="_blank">GitHub</a></li>
-                        <li><a href="#" target="_blank">微信公众号</a></li>
-                        <li><a href="#" target="_blank">Bilibili</a></li>
-                    </ul>
+        <!-- 2. 数据看板 & 动态速览 (Grid Layout) -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
+            <!-- Data Dashboard -->
+            <div class="lg:col-span-2 bg-white rounded-xl p-8 shadow-sm border border-slate-100">
+                <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-6">Platform Stats</h3>
+                <div class="grid grid-cols-3 gap-4 text-center divide-x divide-slate-100">
+                    <div>
+                        <div class="text-4xl font-bold text-slate-800 mb-1">5</div>
+                        <div class="text-xs text-slate-500">Research Tracks</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold text-slate-800 mb-1">10+</div>
+                        <div class="text-xs text-slate-500">Professors</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold text-slate-800 mb-1">TOP</div>
+                        <div class="text-xs text-slate-500">Partners</div>
+                    </div>
                 </div>
             </div>
-            <div class="copyright">
-                <p>&copy; 2025 交叉学科协会. 保留所有权利.</p>
-            </div>
+            
+            <!-- Event Card -->
+            <a href="events.html" class="block bg-slate-800 text-white rounded-xl p-8 shadow-lg relative overflow-hidden group hover:-translate-y-1 transition-transform">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-500 opacity-20 rounded-full blur-3xl group-hover:opacity-30 transition"></div>
+                <div class="relative z-10">
+                    <div class="flex items-center gap-2 mb-4 text-cyan-400">
+                        <span class="relative flex h-2 w-2">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+                        </span>
+                        <span class="text-xs font-bold uppercase">Upcoming</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">AI x Future 挑战赛</h3>
+                    <p class="text-slate-400 text-sm">点击查看赛题与报名详情 &rarr;</p>
+                </div>
+            </a>
         </div>
-    </footer>
+
+    </main>
 </body>
 </html>
