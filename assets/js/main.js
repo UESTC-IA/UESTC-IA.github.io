@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
                 <a href="index.html" class="flex-shrink-0 flex items-center gap-3 group">
-                    <div class="w-8 h-8 bg-cyan-600 rounded-full flex items-center justify-center text-white font-bold text-xs shadow-lg shadow-cyan-600/20 group-hover:scale-110 transition-transform">IA</div>
+                    <img src="assets/images/logo.png" class="w-8 h-8 rounded-full object-cover shadow-lg shadow-cyan-600/20 group-hover:scale-110 transition-transform" alt="UESTC IA Logo">
                     <span class="font-bold text-lg tracking-tight text-slate-800">UESTC <span class="text-cyan-600">IA</span></span>
                 </a>
                 <div class="hidden md:flex space-x-8 items-center">
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
             <div class="mb-4 md:mb-0">
                 <span class="text-slate-300 font-bold tracking-wider">UESTC IA</span>
                 <span class="mx-2 text-slate-700">|</span>
-                <span class="text-xs">电子科技大学交叉学科协会 © 2025</span>
+                <span class="text-xs">电子科技大学交叉学科协会 © 2025 website built by zhixu</span>
             </div>
             <div class="flex space-x-6 text-sm">
                 <a href="#" class="hover:text-cyan-400 transition">关于我们</a>
