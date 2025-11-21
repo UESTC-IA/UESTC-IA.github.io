@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function() {
             <div class="mb-4 md:mb-0">
                 <span class="text-slate-300 font-bold tracking-wider">UESTC IA</span>
                 <span class="mx-2 text-slate-700">|</span>
-                <span class="text-xs">电子科技大学交叉学科协会 © 2025</span>
+                <span class="text-xs">电子科技大学交叉学科协会 © website built by zhixu2025</span>
             </div>
             <div class="flex space-x-6 text-sm">
                 <a href="#" class="hover:text-cyan-400 transition">关于我们</a>
