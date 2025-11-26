@@ -74,6 +74,19 @@
             .carousel-nav-btn.right {
                 right: 10px;
             }
+            
+            /* 移动端轮播高度调整 */
+            .carousel-container {
+                height: 65vh; /* 使用视口高度的百分比 */
+                min-height: 200px; /* 设置最小高度 */
+                max-height: 250px; /* 设置最大高度 */
+            }
+            
+            /* 移动端背景图片调整，确保完整显示 */
+            .carousel-slide {
+                background-position: center !important;
+                background-size: cover !important;
+            }
         }
     </style>
 </head>
@@ -81,9 +94,10 @@
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-screen">
                 
-        <!-- 1. Hero Carousel (全宽轮播容器) -->
+        <!-- 1. Hero Carousel (全宽轮播容器) - 修复移动端显示问题 -->
         <section 
-          class="relative w-full h-[700px] rounded-2xl overflow-hidden shadow-inner mb-12"
+          class="relative w-full rounded-2xl overflow-hidden shadow-inner mb-12 carousel-container"
+          style="height: 700px;"
           x-data="{
             activeSlide: 2,
             totalSlides: 2,
@@ -120,12 +134,12 @@
           <div 
             class="absolute inset-0 bg-cover bg-center carousel-slide"
             :class="{ 'active': activeSlide === 1 }"
-            style="background-image: url('assets/images/carousel/core_members.jpg');"
+            style="background-image: url('assets/images/carousel/core_members.jpg'); background-position: center center; background-size: cover;"
           ></div>
           <div 
             class="absolute inset-0 bg-cover bg-center carousel-slide"
             :class="{ 'active': activeSlide === 2 }"
-            style="background-image: url('assets/images/carousel/challenge.jpg');"
+            style="background-image: url('assets/images/carousel/research.jpg'); background-position: center center; background-size: cover;"
           ></div>
 
           <!-- 左滑按钮 -->

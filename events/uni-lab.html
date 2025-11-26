@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>活动详情 | UESTC IA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- 引入和你主页一样的字体配置 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-slate-50 font-['Noto_Sans_SC']">
+
+    <!-- 顶部导航/返回栏 -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="text-slate-600 hover:text-cyan-600 transition flex items-center gap-2 font-medium">
+                <i class="fas fa-arrow-left"></i> 返回列表
+            </a>
+            <span class="text-slate-400 text-sm">IA x 深势科技</span>
+        </div>
+    </nav>
+
+    <!-- 文章主体内容 -->
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 py-10">
+        
+        <!-- 标题区 -->
+        <header class="mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4 leading-tight">
+                【IA x 深势科技】Uni-Lab交流活动：打破学科边界，用AI解决真实问题
+            </h1>
+            <div class="flex items-center gap-4 text-sm text-slate-500">
+                <span class="text-cyan-600 font-semibold">UESTC IA</span>
+                <span>2025-11-26</span>
+                <span><i class="far fa-eye mr-1"></i> 1,234 阅读</span>
+            </div>
+        </header>
+
+        <!-- 封面图占位 -->
+        <div class="w-full h-64 md:h-80 bg-slate-200 rounded-xl mb-10 overflow-hidden flex items-center justify-center text-slate-400">
+            <!-- 实际使用时替换为 <img src="..." class="w-full h-full object-cover"> -->
+            <i class="fas fa-image text-4xl"></i>
+            <span class="ml-2">活动海报/封面图</span>
+        </div>
+
+        <!-- 正文内容 (Prose风格) -->
+        <article class="prose prose-slate prose-lg max-w-none text-slate-700">
+            <p class="lead text-xl text-slate-600 mb-6">
+                这是一个连接学术与产业的绝佳机会。我们邀请到了深势科技的资深算法专家，深入探讨 AI for Science 的前沿应用。
+            </p>
+
+            <h3 class="text-2xl font-bold text-slate-800 mt-8 mb-4">活动亮点</h3>
+            <ul class="list-disc pl-5 space-y-2 mb-6">
+                <li><strong>前沿技术分享：</strong> 了解 DeepModeling 在材料科学、生物医药领域的落地案例。</li>
+                <li><strong>实战演练：</strong> 现场 Demo 演示，手把手教你运行第一个 AI4S 模型。</li>
+                <li><strong>职业发展：</strong> HR 现场接收简历，提供免笔试直通卡。</li>
+            </ul>
+
+            <h3 class="text-2xl font-bold text-slate-800 mt-8 mb-4">时间与地点</h3>
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-8 rounded-r-lg">
+                <p class="m-0 text-blue-900"><strong>时间：</strong> 2025年11月28日 (周五) 14:30 - 17:00</p>
+                <p class="m-0 text-blue-900 mt-2"><strong>地点：</strong> 清水河校区 图书馆求实厅</p>
+            </div>
+
+            <h3 class="text-2xl font-bold text-slate-800 mt-8 mb-4">报名方式</h3>
+            <p>请点击下方按钮填写报名表，名额有限，先到先得。</p>
+        </article>
+
+        <!-- 底部报名按钮区 -->
+        <div class="mt-12 pt-8 border-t border-slate-200 text-center">
+            <a href="https://wj.qq.com/" target="_blank" class="inline-block bg-cyan-600 hover:bg-cyan-500 text-white text-lg font-bold px-10 py-4 rounded-full shadow-xl shadow-cyan-600/20 transition transform hover:-translate-y-1">
+                填写报名表
+            </a>
+            <p class="mt-4 text-sm text-slate-400">如有疑问，请联系协会小助手 (微信号: uestc_ia)</p>
+        </div>
+
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-white py-8 border-t border-slate-200 mt-12">
+        <div class="text-center text-slate-400 text-sm">
+            &copy; 2025 UESTC IA. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
