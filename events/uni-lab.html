@@ -1,381 +1,620 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Uni-Lab 线下 WorkShop (宜宾场) | 报名开启</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['"Noto Sans SC"', 'sans-serif'],
-                        display: ['"Inter"', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            500: '#0ea5e9',
-                            600: '#0284c7',
-                            700: '#0369a1',
-                            900: '#0c4a6e',
-                        },
-                        accent: {
-                            500: '#8b5cf6', // Violet
-                            600: '#7c3aed',
-                        }
-                    },
-                    backgroundImage: {
-                        'grid-pattern': "linear-gradient(to right, #f1f5f9 1px, transparent 1px), linear-gradient(to bottom, #f1f5f9 1px, transparent 1px)",
-                    }
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Noto Sans SC"', "sans-serif"],
+              display: ['"Inter"', "sans-serif"],
+            },
+            colors: {
+              brand: {
+                50: "#f0f9ff",
+                100: "#e0f2fe",
+                500: "#0ea5e9",
+                600: "#0284c7",
+                700: "#0369a1",
+                900: "#0c4a6e",
+              },
+              accent: {
+                500: "#8b5cf6", // Violet
+                600: "#7c3aed",
+              },
+            },
+            backgroundImage: {
+              "grid-pattern":
+                "linear-gradient(to right, #f1f5f9 1px, transparent 1px), linear-gradient(to bottom, #f1f5f9 1px, transparent 1px)",
+            },
+          },
+        },
+      };
     </script>
     <style>
-        /* 基础设置 */
-        body {
-            font-family: 'Noto Sans SC', sans-serif;
-        }
-        
-        /* 科技感网格背景 */
-        .bg-grid {
-            background-size: 40px 40px;
-            mask-image: linear-gradient(to bottom, transparent, 10%, white, 90%, transparent);
-            -webkit-mask-image: linear-gradient(to bottom, transparent, 5%, white, 95%, transparent);
-        }
+      /* 基础设置 */
+      body {
+        font-family: "Noto Sans SC", sans-serif;
+      }
 
-        /* 磨砂玻璃效果 */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+      /* 科技感网格背景 */
+      .bg-grid {
+        background-size: 40px 40px;
+        mask-image: linear-gradient(
+          to bottom,
+          transparent,
+          10%,
+          white,
+          90%,
+          transparent
+        );
+        -webkit-mask-image: linear-gradient(
+          to bottom,
+          transparent,
+          5%,
+          white,
+          95%,
+          transparent
+        );
+      }
+
+      /* 磨砂玻璃效果 */
+      .glass-card {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      /* 动画类 */
+      .animate-up {
+        animation: fadeInUp 0.8s ease-out forwards;
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
         }
+      }
 
-        /* 动画类 */
-        .animate-up {
-            animation: fadeInUp 0.8s ease-out forwards;
-            opacity: 0;
-            transform: translateY(20px);
-        }
+      .delay-100 {
+        animation-delay: 0.1s;
+      }
+      .delay-200 {
+        animation-delay: 0.2s;
+      }
+      .delay-300 {
+        animation-delay: 0.3s;
+      }
 
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .delay-100 { animation-delay: 0.1s; }
-        .delay-200 { animation-delay: 0.2s; }
-        .delay-300 { animation-delay: 0.3s; }
-
-        /* 自定义滚动条 */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f8fafc; }
-        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+      /* 自定义滚动条 */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f8fafc;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+      }
+      
+      /* 阅读原文按钮脉冲动画 */
+      @keyframes pulse {
+        0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(14, 165, 233, 0.4); }
+        70% { transform: scale(1.05); box-shadow: 0 0 0 12px rgba(14, 165, 233, 0); }
+        100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(14, 165, 233, 0); }
+      }
+      .pulse {
+        animation: pulse 2s infinite;
+      }
     </style>
-</head>
-<body class="bg-slate-50 text-slate-700 antialiased relative">
-
+  </head>
+  <body class="bg-slate-50 text-slate-700 antialiased relative">
     <!-- 背景装饰 -->
     <div class="fixed inset-0 z-0 pointer-events-none">
-        <div class="absolute top-0 left-0 right-0 h-[500px] bg-grid bg-grid-pattern opacity-60"></div>
+      <div
+        class="absolute top-0 left-0 right-0 h-[500px] bg-grid bg-grid-pattern opacity-60"
+      ></div>
     </div>
 
     <!-- 顶部导航 -->
-    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/60 shadow-sm">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-            <a href="../events.html" class="text-slate-600 hover:text-brand-600 transition flex items-center gap-2 font-medium group">
-                <span class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center group-hover:bg-brand-50 transition-colors">
-                    <i class="fas fa-arrow-left text-sm"></i>
-                </span>
-                <span>返回活动列表</span>
-            </a>
-            <div class="flex items-center gap-3">
-                <span class="px-3 py-1 bg-brand-50 text-brand-700 text-xs rounded-full font-bold tracking-wide border border-brand-100">UESTC IA</span>
-                <span class="text-slate-300">|</span>
-                <span class="text-slate-500 text-sm font-medium">深势科技</span>
-            </div>
+    <nav
+      class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/60 shadow-sm"
+    >
+      <div
+        class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between"
+      >
+        <a
+          href="../events.html"
+          class="text-slate-600 hover:text-brand-600 transition flex items-center gap-2 font-medium group"
+        >
+          <span
+            class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center group-hover:bg-brand-50 transition-colors"
+          >
+            <i class="fas fa-arrow-left text-sm"></i>
+          </span>
+          <span>返回活动列表</span>
+        </a>
+        <div class="flex items-center gap-3">
+          <span
+            class="px-3 py-1 bg-brand-50 text-brand-700 text-xs rounded-full font-bold tracking-wide border border-brand-100"
+            >UESTC IA</span
+          >
+          <span class="text-slate-300">|</span>
+          <span class="text-slate-500 text-sm font-medium">深势科技</span>
         </div>
+      </div>
     </nav>
+    
+    <!-- 查看原文按钮 - 放在导航栏下方，内容区上方 -->
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-3">
+      <a href="https://mp.weixin.qq.com/s/VFUJ2crP0j9vVowiBJBWTQ" target="_blank"
+         class="inline-flex items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-brand-500 to-brand-600 text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:from-brand-600 hover:to-brand-700 transition-all duration-300 pulse">
+        <i class="fas fa-book-reader text-lg"></i>
+        <span class="text-base">查看全文 & 活动详情</span>
+        <i class="fas fa-arrow-right text-sm"></i>
+      </a>
+    </div>
 
     <!-- Hero 区域 (修复了背景不可见问题) -->
-    <header class="relative pt-20 pb-24 px-4 overflow-hidden">
-        <!-- 动态渐变背景 -->
-        <div class="absolute inset-0 bg-gradient-to-br from-brand-600 via-brand-500 to-accent-600 z-0"></div>
-        <!-- 装饰光晕 -->
-        <div class="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
-        <div class="absolute bottom-0 left-0 w-64 h-64 bg-accent-500/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3"></div>
+    <header class="relative pt-8 pb-24 px-4 overflow-hidden">
+      <!-- 动态渐变背景 -->
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-brand-600 via-brand-500 to-accent-600 z-0"
+      ></div>
+      <!-- 装饰光晕 -->
+      <div
+        class="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"
+      ></div>
+      <div
+        class="absolute bottom-0 left-0 w-64 h-64 bg-accent-500/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3"
+      ></div>
 
-        <div class="max-w-4xl mx-auto relative z-10 text-center md:text-left animate-up">
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white font-medium text-sm mb-6 hover:bg-white/20 transition-colors cursor-default shadow-lg shadow-brand-900/10">
-                <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-                实验室智能化改造 WorkShop
-            </div>
-            
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight tracking-tight drop-shadow-sm">
-                Uni-Lab 线下 WorkShop <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-100 to-white font-serif italic pr-2">宜宾场</span> 报名开启
-            </h1>
-            
-            <p class="text-xl md:text-2xl text-blue-50 mb-10 font-light max-w-2xl leading-relaxed">
-                告别机械重复，拥抱智能科研。<br>
-                <span class="text-white/80 text-lg mt-2 block">让实验更智能，让科研更高效。</span>
-            </p>
-
-            <div class="flex flex-col sm:flex-row gap-4 text-white font-medium">
-                <div class="flex items-center gap-3 bg-white/10 backdrop-blur rounded-xl px-5 py-3 border border-white/10">
-                    <i class="far fa-calendar-alt text-brand-200 text-xl"></i>
-                    <div>
-                        <div class="text-xs text-brand-100 uppercase tracking-wider">Time</div>
-                        <div>12月14日 (周日)</div>
-                    </div>
-                </div>
-                <div class="flex items-center gap-3 bg-white/10 backdrop-blur rounded-xl px-5 py-3 border border-white/10">
-                    <i class="fas fa-map-marker-alt text-brand-200 text-xl"></i>
-                    <div>
-                        <div class="text-xs text-brand-100 uppercase tracking-wider">Location</div>
-                        <div>宜宾大数据产业园</div>
-                    </div>
-                </div>
-            </div>
+      <div
+        class="max-w-4xl mx-auto relative z-10 text-center md:text-left animate-up"
+      >
+        <div
+          class="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white font-medium text-sm mb-6 hover:bg-white/20 transition-colors cursor-default shadow-lg shadow-brand-900/10"
+        >
+          <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+          实验室智能化改造 WorkShop
         </div>
+
+        <h1
+          class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight tracking-tight drop-shadow-sm"
+        >
+          Uni-Lab 线下 WorkShop <br />
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-blue-100 to-white font-serif italic pr-2"
+            >宜宾场</span
+          >
+          报名开启
+        </h1>
+
+        <p
+          class="text-xl md:text-2xl text-blue-50 mb-10 font-light max-w-2xl leading-relaxed"
+        >
+          告别机械重复，拥抱智能科研。<br />
+          <span class="text-white/80 text-lg mt-2 block"
+            >让实验更智能，让科研更高效。</span
+          >
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 text-white font-medium">
+          <div
+            class="flex items-center gap-3 bg-white/10 backdrop-blur rounded-xl px-5 py-3 border border-white/10"
+          >
+            <i class="far fa-calendar-alt text-brand-200 text-xl"></i>
+            <div>
+              <div class="text-xs text-brand-100 uppercase tracking-wider">
+                Time
+              </div>
+              <div>12月14日 (周日)</div>
+            </div>
+          </div>
+          <div
+            class="flex items-center gap-3 bg-white/10 backdrop-blur rounded-xl px-5 py-3 border border-white/10"
+          >
+            <i class="fas fa-map-marker-alt text-brand-200 text-xl"></i>
+            <div>
+              <div class="text-xs text-brand-100 uppercase tracking-wider">
+                Location
+              </div>
+              <div>宜宾大数据产业园</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
 
     <!-- 主要内容 -->
     <main class="max-w-4xl mx-auto px-4 sm:px-6 -mt-12 relative z-20 pb-20">
-        
-        <!-- 痛点与价值 (卡片式) -->
-        <section class="bg-white rounded-3xl shadow-xl p-8 md:p-12 mb-16 animate-up delay-100 border border-slate-100">
-            <div class="prose prose-slate max-w-none">
-                <div class="text-center mb-10">
-                    <h2 class="text-2xl font-bold text-slate-800 mb-4">为什么你需要参加？</h2>
-                    <p class="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-                        还在为重复操作消耗精力？<br>
-                        传统实验流程低效、数据偏差频发？
+      <!-- 痛点与价值 (卡片式) -->
+      <section
+        class="bg-white rounded-3xl shadow-xl p-8 md:p-12 mb-16 animate-up delay-100 border border-slate-100"
+      >
+        <div class="prose prose-slate max-w-none">
+          <div class="text-center mb-10">
+            <h2 class="text-2xl font-bold text-slate-800 mb-4">
+              为什么你需要参加？
+            </h2>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+              还在为重复操作消耗精力？<br />
+              传统实验流程低效、数据偏差频发？
+            </p>
+          </div>
+
+          <div
+            class="bg-gradient-to-r from-brand-50 to-slate-50 rounded-2xl p-6 border-l-4 border-brand-500"
+          >
+            <p class="font-bold text-brand-700 mb-4 flex items-center gap-2">
+              <i class="fas fa-rocket"></i>
+              智能化改造是未来的关键抓手
+            </p>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <div
+                  class="mt-1 w-5 h-5 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center flex-shrink-0 text-xs"
+                >
+                  <i class="fas fa-check"></i>
+                </div>
+                <span class="text-slate-700"
+                  ><strong>解放双手：</strong
+                  >从移液、记录等机械操作中解脱，专注科学本身。</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <div
+                  class="mt-1 w-5 h-5 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center flex-shrink-0 text-xs"
+                >
+                  <i class="fas fa-check"></i>
+                </div>
+                <span class="text-slate-700"
+                  ><strong>数据精准：</strong>AI
+                  精准控制，提升实验可重复性，结论更扎实。</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <div
+                  class="mt-1 w-5 h-5 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center flex-shrink-0 text-xs"
+                >
+                  <i class="fas fa-check"></i>
+                </div>
+                <span class="text-slate-700"
+                  ><strong>高效协同：</strong
+                  >多设备自动联动，加速实验迭代周期。</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 活动介绍 & 亮点 -->
+      <section class="mb-20 animate-up delay-200">
+        <div class="flex items-center gap-3 mb-8">
+          <div class="w-1.5 h-8 bg-brand-500 rounded-full"></div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">
+            核心亮点抢先看
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Card 1 -->
+          <div
+            class="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-100"
+          >
+            <div
+              class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 text-xl mb-4 group-hover:scale-110 transition-transform"
+            >
+              <i class="fas fa-code"></i>
+            </div>
+            <h3 class="text-lg font-bold text-slate-800 mb-2">代码实战教学</h3>
+            <p class="text-sm text-slate-500 leading-relaxed">
+              系统讲解 Uni-Lab 架构与配置，从底层代码切入，直击改造核心技术。
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-100"
+          >
+            <div
+              class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center text-indigo-600 text-xl mb-4 group-hover:scale-110 transition-transform"
+            >
+              <i class="fas fa-robot"></i>
+            </div>
+            <h3 class="text-lg font-bold text-slate-800 mb-2">设备智能改造</h3>
+            <p class="text-sm text-slate-500 leading-relaxed">
+              聚焦单设备控制与多机协同，手把手带你落地自动化实验场景。
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-100"
+          >
+            <div
+              class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 text-xl mb-4 group-hover:scale-110 transition-transform"
+            >
+              <i class="fas fa-users"></i>
+            </div>
+            <h3 class="text-lg font-bold text-slate-800 mb-2">面对面交流</h3>
+            <p class="text-sm text-slate-500 leading-relaxed">
+              与开发团队零距离探讨，解决你的实验痛点，激发科研新灵感。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 活动安排 (Timeline Style) -->
+      <section class="mb-20 animate-up delay-300">
+        <div class="flex items-center gap-3 mb-8">
+          <div class="w-1.5 h-8 bg-brand-500 rounded-full"></div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">
+            活动日程
+          </h2>
+        </div>
+
+        <div
+          class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden"
+        >
+          <div
+            class="bg-slate-50 px-6 py-4 border-b border-slate-200 flex justify-between items-center"
+          >
+            <div class="font-bold text-slate-700">
+              <i class="far fa-clock mr-2"></i>12月14日 (周日)
+            </div>
+            <div class="text-sm text-slate-500">宜宾大数据产业园二期东塔1F</div>
+          </div>
+          <div class="p-6">
+            <div
+              class="relative pl-8 space-y-8 before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-[2px] before:bg-slate-100"
+            >
+              <!-- Item 1 -->
+              <div class="relative">
+                <div
+                  class="absolute -left-8 w-6 h-6 rounded-full bg-white border-4 border-brand-400"
+                ></div>
+                <div
+                  class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8"
+                >
+                  <span class="text-xl font-bold text-brand-600 w-32 shrink-0"
+                    >09:30 - 11:30</span
+                  >
+                  <div>
+                    <h4 class="text-lg font-bold text-slate-800">
+                      核心代码教学
+                    </h4>
+                    <p class="text-slate-500 text-sm mt-1">
+                      Uni-Lab 系统架构解析与基础配置实战
                     </p>
+                  </div>
                 </div>
-                
-                <div class="bg-gradient-to-r from-brand-50 to-slate-50 rounded-2xl p-6 border-l-4 border-brand-500">
-                    <p class="font-bold text-brand-700 mb-4 flex items-center gap-2">
-                        <i class="fas fa-rocket"></i>
-                        智能化改造是未来的关键抓手
+              </div>
+              <!-- Item 2 -->
+              <div class="relative">
+                <div
+                  class="absolute -left-8 w-6 h-6 rounded-full bg-white border-4 border-accent-400"
+                ></div>
+                <div
+                  class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8"
+                >
+                  <span class="text-xl font-bold text-accent-600 w-32 shrink-0"
+                    >14:00 - 17:00</span
+                  >
+                  <div>
+                    <h4 class="text-lg font-bold text-slate-800">
+                      分组实操演练
+                    </h4>
+                    <p class="text-slate-500 text-sm mt-1">
+                      单设备控制 &
+                      多设备串联实战（反应控制、数据采集、样品处理）
                     </p>
-                    <ul class="space-y-4">
-                        <li class="flex items-start gap-3">
-                            <div class="mt-1 w-5 h-5 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center flex-shrink-0 text-xs">
-                                <i class="fas fa-check"></i>
-                            </div>
-                            <span class="text-slate-700"><strong>解放双手：</strong>从移液、记录等机械操作中解脱，专注科学本身。</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <div class="mt-1 w-5 h-5 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center flex-shrink-0 text-xs">
-                                <i class="fas fa-check"></i>
-                            </div>
-                            <span class="text-slate-700"><strong>数据精准：</strong>AI 精准控制，提升实验可重复性，结论更扎实。</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <div class="mt-1 w-5 h-5 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center flex-shrink-0 text-xs">
-                                <i class="fas fa-check"></i>
-                            </div>
-                            <span class="text-slate-700"><strong>高效协同：</strong>多设备自动联动，加速实验迭代周期。</span>
-                        </li>
-                    </ul>
+                  </div>
                 </div>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <!-- 活动介绍 & 亮点 -->
-        <section class="mb-20 animate-up delay-200">
-            <div class="flex items-center gap-3 mb-8">
-                <div class="w-1.5 h-8 bg-brand-500 rounded-full"></div>
-                <h2 class="text-2xl md:text-3xl font-bold text-slate-900">核心亮点抢先看</h2>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Card 1 -->
-                <div class="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-100">
-                    <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 text-xl mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-slate-800 mb-2">代码实战教学</h3>
-                    <p class="text-sm text-slate-500 leading-relaxed">系统讲解 Uni-Lab 架构与配置，从底层代码切入，直击改造核心技术。</p>
-                </div>
-                
-                <!-- Card 2 -->
-                <div class="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-100">
-                    <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center text-indigo-600 text-xl mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-slate-800 mb-2">设备智能改造</h3>
-                    <p class="text-sm text-slate-500 leading-relaxed">聚焦单设备控制与多机协同，手把手带你落地自动化实验场景。</p>
-                </div>
-                
-                <!-- Card 3 -->
-                <div class="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-100">
-                    <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 text-xl mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-slate-800 mb-2">面对面交流</h3>
-                    <p class="text-sm text-slate-500 leading-relaxed">与开发团队零距离探讨，解决你的实验痛点，激发科研新灵感。</p>
-                </div>
-            </div>
-        </section>
+      <!-- 报名区域 -->
+      <!-- 报名区域（优化版：单列居中） -->
+      <!-- 报名区域（优化版：双栏 + 小二维码） -->
+      <section
+        class="relative rounded-3xl overflow-hidden shadow-2xl animate-up delay-300"
+      >
+        <div
+          class="absolute inset-0 bg-gradient-to-br from-slate-900 to-slate-800"
+        ></div>
+        <div
+          class="absolute right-0 top-0 w-1/3 h-full opacity-5 pointer-events-none"
+        >
+          <i
+            class="fas fa-microchip text-[8rem] absolute -right-10 top-1/4 rotate-12"
+          ></i>
+        </div>
 
-        <!-- 活动安排 (Timeline Style) -->
-        <section class="mb-20 animate-up delay-300">
-             <div class="flex items-center gap-3 mb-8">
-                <div class="w-1.5 h-8 bg-brand-500 rounded-full"></div>
-                <h2 class="text-2xl md:text-3xl font-bold text-slate-900">活动日程</h2>
+        <div class="relative z-10 p-6 md:p-10 text-white">
+          <div class="grid lg:grid-cols-2 gap-10 items-center">
+            <!-- 左侧文案（精炼） -->
+            <div>
+              <h2 class="text-2xl md:text-3xl font-bold mb-4">
+                开启智能科研之旅
+              </h2>
+              <!-- 报名要求（优化版） -->
+<ul class="text-slate-300 mb-6 space-y-2 leading-relaxed list-none">
+    <li class="flex items-start gap-2">
+      <span class="text-brand-300 mt-0.5">•</span>
+      <span>熟悉 Python 基础编程</span>
+    </li>
+    <li class="flex items-start gap-2">
+      <span class="text-brand-300 mt-0.5">•</span>
+      <span>对自动化设备、开源软件有浓厚兴趣</span>
+    </li>
+    <li class="flex items-start gap-2">
+      <span class="text-brand-300 mt-0.5">•</span>
+      <span>能够全程参与一天活动并完成指定任务</span>
+    </li>
+  </ul>
+
+              <div
+                class="bg-white/10 backdrop-blur rounded-xl p-4 border border-white/10"
+              >
+                <h4
+                  class="font-bold text-yellow-400 flex items-center gap-1 mb-1"
+                >
+                  <i class="fas fa-crown"></i> 特别奖励
+                </h4>
+                <p class="text-sm text-slate-200">
+                  表现优异者将有机会入围
+                  <span class="text-white font-bold"
+                    >Uni-Lab-OS 实验室突围计划</span
+                  >，获得专项改造经费支持！
+                </p>
+              </div>
             </div>
 
-            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-                <div class="bg-slate-50 px-6 py-4 border-b border-slate-200 flex justify-between items-center">
-                    <div class="font-bold text-slate-700"><i class="far fa-clock mr-2"></i>12月14日 (周日)</div>
-                    <div class="text-sm text-slate-500">宜宾大数据产业园二期东塔1F</div>
+            <!-- 右侧：小二维码 + 按钮 + 提示 -->
+            <div class="bg-white rounded-2xl p-6 text-slate-800 shadow-lg">
+              <!-- 二维码（真正居中） -->
+              <div class="text-center mb-5">
+                <div
+                  class="w-40 h-40 bg-slate-100 rounded-xl flex items-center justify-center mx-auto mb-3 border border-slate-300"
+                >
+                  <a href="https://wj.qq.com/s2/24869508/ky3g/" target="_blank">
+                    <img
+                      src="/assets/images/event/uni-lab/报名表.png"
+                      alt="报名二维码"
+                      class="w-32 h-32 object-contain"
+                    />
+                  </a>
                 </div>
-                <div class="p-6">
-                    <div class="relative pl-8 space-y-8 before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-[2px] before:bg-slate-100">
-                        <!-- Item 1 -->
-                        <div class="relative">
-                            <div class="absolute -left-8 w-6 h-6 rounded-full bg-white border-4 border-brand-400"></div>
-                            <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8">
-                                <span class="text-xl font-bold text-brand-600 w-32 shrink-0">09:30 - 11:30</span>
-                                <div>
-                                    <h4 class="text-lg font-bold text-slate-800">核心代码教学</h4>
-                                    <p class="text-slate-500 text-sm mt-1">Uni-Lab 系统架构解析与基础配置实战</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Item 2 -->
-                        <div class="relative">
-                            <div class="absolute -left-8 w-6 h-6 rounded-full bg-white border-4 border-accent-400"></div>
-                            <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8">
-                                <span class="text-xl font-bold text-accent-600 w-32 shrink-0">14:00 - 17:00</span>
-                                <div>
-                                    <h4 class="text-lg font-bold text-slate-800">分组实操演练</h4>
-                                    <p class="text-slate-500 text-sm mt-1">单设备控制 & 多设备串联实战（反应控制、数据采集、样品处理）</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <p class="text-xs text-slate-600">扫码或点击下方按钮报名</p>
+              </div>
+
+              <a
+                href="https://wj.qq.com/s2/24869508/ky3g/"
+                target="_blank"
+                class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-2.5 rounded-xl text-center transition-colors flex items-center justify-center gap-2 text-sm"
+              >
+                <span>立即填写报名表</span>
+                <i class="fas fa-arrow-right text-xs"></i>
+              </a>
+
+              <!-- 精简提示 -->
+              <div
+                class="mt-5 p-3 bg-blue-50 border border-blue-200 rounded-lg text-xs text-blue-800"
+              >
+                <p class="font-medium">📌 提交后请勿切出页面！</p>
+                <p>
+                  将自动跳转至微信群二维码页，请及时扫码加入【Uni-Lab开发者线下
+                  WorkShop（宜宾场）交流群】。
+                </p>
+                <p class="mt-1">
+                  如遇问题，请添加微信：<span
+                    class="font-mono bg-blue-100 px-1 py-0.5 rounded"
+                    >deeppotential</span
+                  >
+                </p>
+              </div>
             </div>
-        </section>
-
-        <!-- 报名区域 -->
-        <section class="relative rounded-3xl overflow-hidden shadow-2xl animate-up delay-300">
-            <div class="absolute inset-0 bg-gradient-to-br from-slate-900 to-slate-800"></div>
-            <!-- 抽象背景图 -->
-            <div class="absolute right-0 top-0 w-1/2 h-full opacity-10 pointer-events-none">
-                 <i class="fas fa-microchip text-[15rem] absolute -right-10 top-10 rotate-12"></i>
-            </div>
-
-            <div class="relative z-10 p-8 md:p-12 text-white">
-                <div class="grid lg:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h2 class="text-3xl font-bold mb-6">准备好开启智能科研之旅了吗？</h2>
-                        
-                        <div class="space-y-4 mb-8 text-slate-300">
-                            <div class="flex items-center gap-3">
-                                <i class="fas fa-check-circle text-green-400"></i>
-                                <span>熟悉 Python 基础编程</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <i class="fas fa-check-circle text-green-400"></i>
-                                <span>对自动化设备、开源软件有浓厚兴趣</span>
-                            </div>
-                        </div>
-
-                        <div class="bg-white/10 backdrop-blur rounded-xl p-6 border border-white/10 mb-8">
-                            <h4 class="font-bold text-yellow-400 mb-2"><i class="fas fa-crown mr-2"></i>特别奖励</h4>
-                            <p class="text-sm text-slate-200">
-                                表现优异者有机会入围 <span class="text-white font-bold underline decoration-yellow-400">Uni-Lab-OS 实验室突围计划</span>，获得专项改造经费支持！
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col items-center bg-white rounded-2xl p-6 text-slate-800 shadow-lg max-w-sm mx-auto w-full">
-                        <div class="w-full aspect-square bg-slate-100 rounded-xl flex items-center justify-center mb-4 border-2 border-dashed border-slate-300 text-slate-400">
-                            <div class="text-center">
-                                <i class="fas fa-qrcode text-5xl mb-2"></i>
-                                <p class="text-xs">（此处放置报名二维码）</p>
-                            </div>
-                        </div>
-                        <a href="https://wj.qq.com/s2/24869508/ky3g/" target="_blank" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-3 px-6 rounded-xl text-center transition-colors shadow-lg shadow-brand-200 flex items-center justify-center gap-2">
-                            <span>立即填写报名表</span>
-                            <i class="fas fa-arrow-right text-sm"></i>
-                        </a>
-                        <p class="text-xs text-slate-500 mt-4 text-center">
-                            截止时间：12月9日 23:59 <br>
-                            限额 50 人，人满即止
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- 页脚 -->
     <footer class="bg-white border-t border-slate-200 pt-16 pb-8">
-        <div class="max-w-4xl mx-auto px-4 text-center md:text-left">
-            <div class="grid md:grid-cols-3 gap-10 mb-12">
-                <div>
-                    <h3 class="font-bold text-slate-800 mb-4 flex items-center justify-center md:justify-start gap-2">
-                        <i class="fas fa-atom text-brand-500"></i> UESTC IA
-                    </h3>
-                    <p class="text-slate-500 text-sm leading-relaxed">
-                        电子科技大学学科交叉协会，连接学术与产业，致力于培养未来的复合型创新人才。
-                    </p>
-                </div>
-                <div>
-                    <h3 class="font-bold text-slate-800 mb-4 flex items-center justify-center md:justify-start gap-2">
-                        <i class="fas fa-cube text-brand-500"></i> 深势科技
-                    </h3>
-                    <p class="text-slate-500 text-sm leading-relaxed">
-                        "AI for Science" 领域的先行者，用人工智能驱动科学研究的新范式。
-                    </p>
-                </div>
-                <div>
-                    <h3 class="font-bold text-slate-800 mb-4">联系我们</h3>
-                    <ul class="text-sm text-slate-500 space-y-2">
-                        <li><i class="fas fa-envelope w-5 text-slate-400"></i> ia@uestc.edu.cn</li>
-                        <li><i class="fab fa-weixin w-5 text-slate-400"></i> uestc_ia</li>
-                        <li><i class="fas fa-map-pin w-5 text-slate-400"></i> 电子科技大学清水河校区</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="border-t border-slate-100 pt-8 flex flex-col md:flex-row justify-between items-center text-slate-400 text-xs gap-4">
-                <p>&copy; 2025 UESTC Interdisciplinary Association. All rights reserved.</p>
-                <div class="flex gap-4 text-lg">
-                    <a href="#" class="hover:text-brand-500 transition"><i class="fab fa-weixin"></i></a>
-                    <a href="#" class="hover:text-brand-500 transition"><i class="fab fa-github"></i></a>
-                </div>
-            </div>
+      <div class="max-w-4xl mx-auto px-4 text-center md:text-left">
+        <div class="grid md:grid-cols-3 gap-10 mb-12">
+          <div>
+            <h3
+              class="font-bold text-slate-800 mb-4 flex items-center justify-center md:justify-start gap-2"
+            >
+              <i class="fas fa-atom text-brand-500"></i> UESTC IA
+            </h3>
+            <p class="text-slate-500 text-sm leading-relaxed">
+              电子科技大学学科交叉协会，连接学术与产业，致力于培养未来的复合型创新人才。
+            </p>
+          </div>
+          <div>
+            <h3
+              class="font-bold text-slate-800 mb-4 flex items-center justify-center md:justify-start gap-2"
+            >
+              <i class="fas fa-cube text-brand-500"></i> 深势科技
+            </h3>
+            <p class="text-slate-500 text-sm leading-relaxed">
+              "AI for Science" 领域的先行者，用人工智能驱动科学研究的新范式。
+            </p>
+          </div>
+          <div>
+            <!-- <h3 class="font-bold text-slate-800 mb-4">联系我们</h3>
+            <ul class="text-sm text-slate-500 space-y-2">
+              <li>
+                <i class="fas fa-envelope w-5 text-slate-400"></i>
+                uestc-ia
+              </li>
+              <li><i class="fab fa-weixin w-5 text-slate-400"></i> uestc_ia</li>
+              <li> -->
+                <i class="fas fa-map-pin w-5 text-slate-400"></i>
+                电子科技大学清水河校区
+              </li>
+            </ul>
+          </div>
         </div>
+
+        <div
+          class="border-t border-slate-100 pt-8 flex flex-col md:flex-row justify-between items-center text-slate-400 text-xs gap-4"
+        >
+          <p>
+            &copy; 2025 UESTC Interdisciplinary Association. All rights
+            reserved. Website built by Zhixu
+          </p>
+          <div class="flex gap-4 text-lg">
+            <a href="#" class="hover:text-brand-500 transition"
+              ><i class="fab fa-weixin"></i
+            ></a>
+            <a href="#" class="hover:text-brand-500 transition"
+              ><i class="fab fa-github"></i
+            ></a>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <script>
-        // 简单的进入动画触发
-        document.addEventListener('DOMContentLoaded', () => {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.animationPlayState = 'running';
-                    }
-                });
-            });
-            
-            // 可以在这里添加更多交互逻辑
+      // 简单的进入动画触发
+      document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.style.animationPlayState = "running";
+            }
+          });
         });
+
+        // 可以在这里添加更多交互逻辑
+      });
     </script>
-</body>
+  </body>
 </html>
