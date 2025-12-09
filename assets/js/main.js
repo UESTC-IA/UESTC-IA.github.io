@@ -1,9 +1,9 @@
-document.addEventListener("DOMContentLoaded", function() {
-    console.log("Main.js loaded: Initializing Navbar...");
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("Main.js loaded: Initializing Navbar...");
 
-    // 1. 注入导航栏 (Navbar)
-    // 注意：移动端按钮现在使用 SVG，不再依赖 FontAwesome
-    const navbarHTML = `
+  // 1. 注入导航栏 (Navbar)
+  // 注意：移动端按钮现在使用 SVG，不再依赖 FontAwesome
+  const navbarHTML = `
     <nav class="fixed w-full z-50 top-0 transition-all duration-300 glass-effect border-b border-slate-200/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
@@ -46,35 +46,35 @@ document.addEventListener("DOMContentLoaded", function() {
         </div>
     </nav>
     `;
-    document.body.insertAdjacentHTML('afterbegin', navbarHTML);
+  document.body.insertAdjacentHTML("afterbegin", navbarHTML);
 
-    // 2. 绑定交互事件
-    const btn = document.getElementById('mobile-menu-btn');
-    const menu = document.getElementById('mobile-menu');
-    const iconMenu = document.getElementById('icon-menu');
-    const iconClose = document.getElementById('icon-close');
+  // 2. 绑定交互事件
+  const btn = document.getElementById("mobile-menu-btn");
+  const menu = document.getElementById("mobile-menu");
+  const iconMenu = document.getElementById("icon-menu");
+  const iconClose = document.getElementById("icon-close");
 
-    if (btn && menu) {
-        console.log("Mobile menu elements found, attaching listener.");
-        btn.addEventListener('click', () => {
-            // 切换菜单显示
-            menu.classList.toggle('hidden');
-            
-            // 切换图标显示
-            if (menu.classList.contains('hidden')) {
-                iconMenu.classList.remove('hidden');
-                iconClose.classList.add('hidden');
-            } else {
-                iconMenu.classList.add('hidden');
-                iconClose.classList.remove('hidden');
-            }
-        });
-    } else {
-        console.error("Error: Mobile menu button not found via JS.");
-    }
+  if (btn && menu) {
+    console.log("Mobile menu elements found, attaching listener.");
+    btn.addEventListener("click", () => {
+      // 切换菜单显示
+      menu.classList.toggle("hidden");
 
-    // 3. 注入页脚 (Footer) - 保持不变
-    const footerHTML = `
+      // 切换图标显示
+      if (menu.classList.contains("hidden")) {
+        iconMenu.classList.remove("hidden");
+        iconClose.classList.add("hidden");
+      } else {
+        iconMenu.classList.add("hidden");
+        iconClose.classList.remove("hidden");
+      }
+    });
+  } else {
+    console.error("Error: Mobile menu button not found via JS.");
+  }
+
+  // 3. 注入页脚 (Footer) - 保持不变
+  const footerHTML = `
     <footer class="bg-slate-900 text-slate-500 py-12 mt-20 border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
             <div class="mb-4 md:mb-0">
@@ -89,5 +89,5 @@ document.addEventListener("DOMContentLoaded", function() {
         </div>
     </footer>
     `;
-    document.body.insertAdjacentHTML('beforeend', footerHTML);
+  document.body.insertAdjacentHTML("beforeend", footerHTML);
 });
