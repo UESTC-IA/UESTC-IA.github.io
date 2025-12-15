@@ -23,7 +23,7 @@
         </div>
 
         <!-- 1. 旗舰赛事聚焦 (Spotlight) -->
-        <div class="relative w-full bg-slate-800 rounded-2xl overflow-hidden shadow-xl mb-16 group">
+        <!-- <div class="relative w-full bg-slate-800 rounded-2xl overflow-hidden shadow-xl mb-16 group">
             <div class="absolute top-0 right-0 w-64 h-64 bg-cyan-600 opacity-20 rounded-full blur-3xl group-hover:opacity-30 transition duration-500"></div>
             
             <div class="relative z-10 p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
@@ -38,11 +38,36 @@
                     立即报名 <i class="fas fa-arrow-right ml-2"></i>
                 </a>
             </div>
-        </div>
+        </div> -->
 
         <!-- 2. 交互式时间轴 (Timeline) -->
         <div class="relative border-l-2 border-slate-200 ml-4 md:ml-6 space-y-12 pb-12">
-            
+            <div class="relative pl-8 md:pl-12">
+                <!-- 时间节点点缀 -->
+                <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-cyan-600 border-4 border-slate-50"></div>
+                
+                <span class="text-sm font-bold text-cyan-600 block mb-1">2025.12.14（周日）</span>
+                <div class="bg-white p-6 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold px-2 py-1 rounded bg-blue-50 text-blue-600">项目分享</span>
+                        <span class="text-xs text-slate-400"><i class="far fa-clock mr-1"></i> 12.12 - 12.17</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">【IA x 深势科技】Uni-Lab线下WorkShop（宜宾场）</h3>
+                    <p class="text-slate-600 text-sm mb-4">让实验更智能，让科研更高效。 本期 WorkShop 聚焦实验室表征设备智能化改造，邀你亲手解锁自动化实验新技能，共赴一场用技术赋能科研的进阶之旅！</p>
+                    
+                    <!-- 修改部分：将 button 改为 a 标签，并添加 href -->
+                    <div class="flex gap-3">
+                        <a href="events/uni-lab.html" target="_blank" class="underline text-sm font-medium text-slate-500 hover:text-cyan-600 transition">
+                            活动详情
+                        </a>
+                        <a href="events/uni-lab-news.html" target="_blank" class="underline text-sm font-medium text-slate-500 hover:text-cyan-600 transition">
+                         活动新闻
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
             <!-- Upcoming Event 1 -->
             <div class="relative pl-8 md:pl-12">
                 <!-- 时间节点点缀 -->
