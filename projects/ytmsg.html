@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/images/logo.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/images/logo.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo.ico">
+    <title>研途信使 - 保研AI好助手 | UESTC IA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/main.js" defer></script>
+</head>
+<body class="pt-24 bg-slate-50">
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 min-h-screen mb-20">
+
+        <!-- 返回 -->
+        <div class="mb-6">
+            <a href="../projects.html" class="inline-flex items-center text-sm font-medium text-slate-500 hover:text-cyan-600 transition">
+                <i class="fas fa-arrow-left mr-2"></i>返回项目列表
+            </a>
+        </div>
+
+        <!-- 项目头部 -->
+        <div class="bg-white rounded-xl shadow-md border border-slate-200 p-8 mb-8">
+            <div class="flex flex-col md:flex-row items-start gap-6">
+                <div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center shadow-lg flex-shrink-0">
+                    <img src="../assets/images/project/ytmsg/logo.png" alt="研途信使" class="w-16 h-16 rounded-xl object-cover">
+                </div>
+                <div class="flex-1">
+                    <div class="flex items-center gap-3 mb-2">
+                        <h1 class="text-2xl font-bold text-slate-800">研途信使</h1>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-semibold rounded-full">微信小程序</span>
+                        <span class="px-3 py-1 bg-green-100 text-green-600 text-xs font-semibold rounded-full">已上线</span>
+                    </div>
+                    <p class="text-slate-500 font-medium mb-3">保研套瓷好助手</p>
+                    <p class="text-slate-600 leading-relaxed">
+                        基于大语言模型的升学辅助与自动套磁邮件管理平台，帮助同学们高效完成保研申请中的信息检索、文书撰写与导师联系。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 产品界面 -->
+        <div class="bg-white rounded-xl shadow-md border border-slate-200 p-6 mb-8">
+            <h2 class="text-lg font-bold text-slate-800 mb-4">产品界面</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl p-6 flex flex-col items-center">
+                    <img src="../assets/images/project/ytmsg/界面1.png" alt="主界面" class="w-48 rounded-lg shadow-md">
+                    <p class="text-slate-600 font-medium text-sm mt-3">主界面</p>
+                </div>
+                <div class="bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl p-6 flex flex-col items-center">
+                    <img src="../assets/images/project/ytmsg/界面2.png" alt="邮件管理" class="w-48 rounded-lg shadow-md">
+                    <p class="text-slate-600 font-medium text-sm mt-3">邮件管理</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 核心功能 -->
+        <div class="bg-white rounded-xl shadow-md border border-slate-200 p-6 mb-8">
+            <h2 class="text-lg font-bold text-slate-800 mb-4">核心功能</h2>
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="p-5 bg-gradient-to-br from-cyan-50 to-blue-50 rounded-xl border border-cyan-100">
+                    <div class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center mb-3">
+                        <i class="fas fa-file-alt text-white text-lg"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-800 mb-2">简历信息管理</h3>
+                    <p class="text-slate-600 text-sm">一键生成标准化个人档案，匹配导师、发送套磁信直接复用</p>
+                </div>
+                <div class="p-5 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border border-blue-100">
+                    <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center mb-3">
+                        <i class="fas fa-envelope text-white text-lg"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-800 mb-2">邮件批量发送</h3>
+                    <p class="text-slate-600 text-sm">模板模式无限发送，AI模式千人千面，自动记录发送状态</p>
+                </div>
+                <div class="p-5 bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl border border-purple-100">
+                    <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center mb-3">
+                        <i class="fas fa-inbox text-white text-lg"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-800 mb-2">收件箱管理</h3>
+                    <p class="text-slate-600 text-sm">绑定邮箱自动收取导师回复，来往邮件集中管理</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 效率对比 -->
+        <div class="bg-white rounded-xl shadow-md border border-slate-200 p-6 mb-8">
+            <h2 class="text-lg font-bold text-slate-800 mb-4">效率对比</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="p-5 bg-gradient-to-br from-red-50 to-orange-50 rounded-xl border border-red-100">
+                    <h3 class="font-bold text-red-600 mb-4">传统方式 · 100封邮件</h3>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between font-medium">
+                            <span class="text-slate-600">查导师邮箱</span>
+                            <span class="text-slate-800">10分钟/人</span>
+                        </div>
+                        <div class="flex justify-between font-medium">
+                            <span class="text-slate-600">手动编辑</span>
+                            <span class="text-slate-800">15分钟/封</span>
+                        </div>
+                        <div class="flex justify-between font-medium">
+                            <span class="text-slate-600">逐封发送</span>
+                            <span class="text-slate-800">5分钟/封</span>
+                        </div>
+                        <div class="pt-3 mt-3 border-t border-red-200 flex justify-between font-bold">
+                            <span class="text-slate-700">总计</span>
+                            <span class="text-red-600 text-lg">50+ 小时</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-5 bg-gradient-to-br from-cyan-50 to-blue-50 rounded-xl border border-cyan-100">
+                    <h3 class="font-bold text-cyan-600 mb-4">研途信使 · 100封邮件</h3>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between font-medium">
+                            <span class="text-slate-600">录入导师信息</span>
+                            <span class="text-slate-800">1分钟/人</span>
+                        </div>
+                        <div class="flex justify-between font-medium">
+                            <span class="text-slate-600">AI模板生成</span>
+                            <span class="text-slate-800">一次搞定</span>
+                        </div>
+                        <div class="flex justify-between font-medium">
+                            <span class="text-slate-600">批量发送</span>
+                            <span class="text-slate-800">10分钟</span>
+                        </div>
+                        <div class="pt-3 mt-3 border-t border-cyan-200 flex justify-between font-bold">
+                            <span class="text-cyan-700">总计</span>
+                            <span class="text-cyan-600 text-lg">2 小时内</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 邮件发送 -->
+        <div class="bg-white rounded-xl shadow-md border border-slate-200 p-6 mb-8">
+            <h2 class="text-lg font-bold text-slate-800 mb-4">邮件发送</h2>
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="p-4 bg-slate-50 rounded-lg border border-slate-200">
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="w-7 h-7 bg-gradient-to-br from-cyan-500 to-blue-600 text-white rounded-full flex items-center justify-center text-xs font-bold">1</span>
+                        <h3 class="font-bold text-slate-800">普通模板模式</h3>
+                    </div>
+                    <p class="text-slate-600 text-sm pl-10">自定义模板，占位符自动替换，不消耗AI次数</p>
+                </div>
+                <div class="p-4 bg-slate-50 rounded-lg border border-slate-200">
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="w-7 h-7 bg-gradient-to-br from-purple-500 to-pink-600 text-white rounded-full flex items-center justify-center text-xs font-bold">2</span>
+                        <h3 class="font-bold text-slate-800">AI个性化模式</h3>
+                    </div>
+                    <p class="text-slate-600 text-sm pl-10">根据导师研究方向/论文生成专属内容</p>
+                </div>
+                <div class="p-4 bg-slate-50 rounded-lg border border-slate-200">
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="w-7 h-7 bg-gradient-to-br from-blue-500 to-indigo-600 text-white rounded-full flex items-center justify-center text-xs font-bold">3</span>
+                        <h3 class="font-bold text-slate-800">批量发送</h3>
+                    </div>
+                    <p class="text-slate-600 text-sm pl-10">勾选导师一键群发，自动收取导师回复</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 即将上线 -->
+        <div class="bg-gradient-to-r from-slate-800 to-slate-900 rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-lg font-bold text-white mb-4">即将上线</h2>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="p-5 bg-white/10 backdrop-blur rounded-xl border border-white/20">
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="w-10 h-10 bg-cyan-500/30 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-university text-cyan-400"></i>
+                        </div>
+                        <h3 class="font-bold text-white">院校导师库</h3>
+                    </div>
+                    <p class="text-slate-300 text-sm pl-13">汇聚全国高校导师信息，一键搜索，智能匹配推荐</p>
+                </div>
+                <div class="p-5 bg-white/10 backdrop-blur rounded-xl border border-white/20">
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="w-10 h-10 bg-purple-500/30 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-comments text-purple-400"></i>
+                        </div>
+                        <h3 class="font-bold text-white">保研社交论坛</h3>
+                    </div>
+                    <p class="text-slate-300 text-sm pl-13">保研定位、导师分享、面经交流、上岸报喜</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 如何使用 -->
+        <div class="bg-white rounded-xl shadow-md border border-slate-200 p-6">
+            <h2 class="text-lg font-bold text-slate-800 mb-4">如何使用</h2>
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="flex-shrink-0">
+                    <img src="../assets/images/project/ytmsg/QR.png" alt="小程序二维码" class="w-52 h-52 rounded-xl shadow-md border-4 border-white">
+                </div>
+                <div class="flex-1">
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <span class="w-8 h-8 bg-gradient-to-br from-cyan-500 to-blue-600 text-white rounded-full flex items-center justify-center font-bold">1</span>
+                            <span class="text-slate-700 font-medium">关注「研途信使」公众号</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="w-8 h-8 bg-gradient-to-br from-cyan-500 to-blue-600 text-white rounded-full flex items-center justify-center font-bold">2</span>
+                            <span class="text-slate-700 font-medium">发送"兑换码"获取专属兑换码</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="w-8 h-8 bg-gradient-to-br from-cyan-500 to-blue-600 text-white rounded-full flex items-center justify-center font-bold">3</span>
+                            <span class="text-slate-700 font-medium">小程序输入兑换码即可使用</span>
+                        </div>
+                    </div>
+                    <div class="mt-5 pt-5 border-t border-slate-200">
+                        <p class="text-sm">
+                            <span class="font-bold text-slate-700">新用户福利：</span>
+                            <span class="text-slate-600">关注公众号领20次AI生成次数，邀请好友再得10次</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+</body>
+</html>
