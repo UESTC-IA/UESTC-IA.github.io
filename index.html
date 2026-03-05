@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
@@ -6,10 +6,16 @@
     <title>首页 | UESTC Interdisciplinary Association</title>
     <link rel="icon" href="assets/images/logo.ico" type="image/x-icon" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="assets/css/style.css" />
     <script src="assets/js/main.js" defer></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
   </head>
   <body class="pt-24">
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-screen">
@@ -31,26 +37,85 @@
       >
         <div class="hero-media min-h-[420px] md:min-h-[520px]">
           <div class="carousel-stack">
-            <div class="carousel-slide" :class="{ 'active': activeSlide === 1 }"><img src="assets/images/carousel/core_members.jpg" alt="核心成员" /></div>
-            <div class="carousel-slide" :class="{ 'active': activeSlide === 2 }"><img src="assets/images/carousel/research.jpg" alt="研究活动" /></div>
-            <div class="carousel-slide" :class="{ 'active': activeSlide === 3 }"><img src="assets/images/carousel/DPTech.jpg" alt="企业合作" /></div>
-            <div class="carousel-slide" :class="{ 'active': activeSlide === 4 }"><img src="assets/images/carousel/chengjie.jpg" alt="路演现场" /></div>
+            <div
+              class="carousel-slide"
+              :class="{ 'active': activeSlide === 1 }"
+            >
+              <img
+                src="assets/images/carousel/core_members.jpg"
+                alt="核心成员"
+              />
+            </div>
+            <div
+              class="carousel-slide"
+              :class="{ 'active': activeSlide === 2 }"
+            >
+              <img src="assets/images/carousel/research.jpg" alt="研究活动" />
+            </div>
+            <div
+              class="carousel-slide"
+              :class="{ 'active': activeSlide === 3 }"
+            >
+              <img src="assets/images/carousel/DPTech.jpg" alt="企业合作" />
+            </div>
+            <div
+              class="carousel-slide"
+              :class="{ 'active': activeSlide === 4 }"
+            >
+              <img src="assets/images/carousel/chengjie.jpg" alt="路演现场" />
+            </div>
           </div>
 
-          <button class="hero-nav hero-nav-left" @click="prev()" aria-label="上一张"><i class="fa-solid fa-chevron-left"></i></button>
-          <button class="hero-nav hero-nav-right" @click="next()" aria-label="下一张"><i class="fa-solid fa-chevron-right"></i></button>
+          <button
+            class="hero-nav hero-nav-left"
+            @click="prev()"
+            aria-label="上一张"
+          >
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button
+            class="hero-nav hero-nav-right"
+            @click="next()"
+            aria-label="下一张"
+          >
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
 
           <div class="hero-overlay">
             <div class="hero-copy">
               <p class="title-en text-sm mb-2">ACADEMIC TECH x FUTURE LAB</p>
-              <h1 class="text-4xl md:text-5xl font-bold mb-3">交叉学科协会 · 未来实验场</h1>
-              <p class="text-base md:text-lg">连接学院、产业与学生创新团队，以问题驱动研究，以实践沉淀成果。</p>
+              <h1 class="text-4xl md:text-5xl font-bold mb-3">
+                交叉学科协会 · 未来实验场
+              </h1>
+              <p class="text-base md:text-lg">
+                连接学院、产业与学生创新团队，以问题驱动研究，以实践沉淀成果。
+              </p>
             </div>
             <div class="hero-hud" role="tablist" aria-label="轮播进度">
-              <button class="hud-dot" :class="{ 'active': activeSlide === 1 }" @click="jump(1)" aria-label="第1张"></button>
-              <button class="hud-dot" :class="{ 'active': activeSlide === 2 }" @click="jump(2)" aria-label="第2张"></button>
-              <button class="hud-dot" :class="{ 'active': activeSlide === 3 }" @click="jump(3)" aria-label="第3张"></button>
-              <button class="hud-dot" :class="{ 'active': activeSlide === 4 }" @click="jump(4)" aria-label="第4张"></button>
+              <button
+                class="hud-dot"
+                :class="{ 'active': activeSlide === 1 }"
+                @click="jump(1)"
+                aria-label="第1张"
+              ></button>
+              <button
+                class="hud-dot"
+                :class="{ 'active': activeSlide === 2 }"
+                @click="jump(2)"
+                aria-label="第2张"
+              ></button>
+              <button
+                class="hud-dot"
+                :class="{ 'active': activeSlide === 3 }"
+                @click="jump(3)"
+                aria-label="第3张"
+              ></button>
+              <button
+                class="hud-dot"
+                :class="{ 'active': activeSlide === 4 }"
+                @click="jump(4)"
+                aria-label="第4张"
+              ></button>
             </div>
           </div>
         </div>
@@ -64,9 +129,18 @@
             <p>保持稳定训练节奏与跨界协同，把研究、项目和活动串成闭环。</p>
           </div>
           <div class="metrics-grid mb-5">
-            <article class="metric-card"><p class="metric-value text-en">5</p><p class="text-sm text-muted mt-1">研究赛道</p></article>
-            <article class="metric-card"><p class="metric-value text-en">5</p><p class="text-sm text-muted mt-1">导师顾问</p></article>
-            <article class="metric-card"><p class="metric-value text-en">TOP</p><p class="text-sm text-muted mt-1">产业合作</p></article>
+            <article class="metric-card">
+              <p class="metric-value text-en">5</p>
+              <p class="text-sm text-muted mt-1">研究赛道</p>
+            </article>
+            <article class="metric-card">
+              <p class="metric-value text-en">5</p>
+              <p class="text-sm text-muted mt-1">导师顾问</p>
+            </article>
+            <article class="metric-card">
+              <p class="metric-value text-en">TOP</p>
+              <p class="text-sm text-muted mt-1">产业合作</p>
+            </article>
           </div>
           <div class="flex flex-wrap gap-3">
             <a href="events.html" class="btn btn-primary">查看活动</a>
@@ -77,8 +151,10 @@
 
         <article class="card-core p-6">
           <p class="title-en text-sm mb-2">Flagship Event</p>
-          <h3 class="text-2xl font-bold mb-3">Uni-Lab 跨学科工作坊</h3>
-          <p class="mb-5">围绕产学协同、AI 应用和前沿实践，建立面向真实场景的联合训练路径。</p>
+          <h3 class="text-2xl font-bold mb-3">Uni-Lab Offline Workshop</h3>
+          <p class="mb-5">
+            围绕产学协同、AI 应用和前沿实践，建立面向真实场景的联合训练路径。
+          </p>
           <a href="events/uni-lab.html" class="btn btn-ghost">进入专题</a>
         </article>
       </section>
@@ -88,7 +164,10 @@
           <div class="title-block !text-left">
             <div class="title-en">Methodology</div>
             <h2 class="text-2xl font-bold">方法论</h2>
-            <p>以学院研究能力为理性基底，以企业场景作为验证闭环，形成“课题发现 - 方案验证 - 成果转化”的连续工作流。</p>
+            <p>
+              以学院研究能力为理性基底，以企业场景作为验证闭环，形成“课题发现 -
+              方案验证 - 成果转化”的连续工作流。
+            </p>
           </div>
         </article>
         <article class="card-core p-6">
