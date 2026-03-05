@@ -1,93 +1,107 @@
-document.addEventListener("DOMContentLoaded", function () {
-  console.log("Main.js loaded: Initializing Navbar...");
+document.addEventListener('DOMContentLoaded', () => {
+  const links = [
+    { href: 'index.html', label: '首页' },
+    { href: 'partners.html', label: '合作与导师' },
+    { href: 'research.html', label: '研究方向' },
+    { href: 'events.html', label: '活动' },
+    { href: 'projects.html', label: '项目' }
+  ];
 
-  // 1. 注入导航栏 (Navbar)
-  // 注意：移动端按钮现在使用 SVG，不再依赖 FontAwesome
+  const entryScript = document.querySelector('script[src*="assets/js/main.js"]');
+  const srcAttr = entryScript ? entryScript.getAttribute('src') || '' : '';
+  const basePrefix = srcAttr.startsWith('../') ? '../' : '';
+
+  const resolveHref = (href) => `${basePrefix}${href}`;
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+
+  const navDesktop = links
+    .map((item) => {
+      const current = currentPage === item.href ? ' aria-current="page"' : '';
+      return `<a href="${resolveHref(item.href)}" class="nav-link text-sm font-semibold"${current}>${item.label}</a>`;
+    })
+    .join('');
+
+  const navMobile = links
+    .map((item) => {
+      const current = currentPage === item.href ? ' aria-current="page"' : '';
+      return `<a href="${resolveHref(item.href)}" class="block px-4 py-3 rounded-xl text-[15px] font-semibold nav-link"${current}>${item.label}</a>`;
+    })
+    .join('');
+
   const navbarHTML = `
-    <nav class="fixed w-full z-50 top-0 transition-all duration-300 glass-effect border-b border-slate-200/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16 items-center">
-                <a href="index.html" class="flex-shrink-0 flex items-center gap-3 group">
-                    <img src="assets/images/logo.png" class="w-8 h-8 rounded-full object-cover shadow-lg shadow-cyan-600/20 group-hover:scale-110 transition-transform" alt="UESTC IA Logo" onerror="this.style.display='none'">
-                    <span class="font-bold text-lg tracking-tight text-slate-800">UESTC <span class="text-cyan-600">IA</span></span>
-                </a>
-
-                <div class="hidden md:flex space-x-8 items-center">
-                    <a href="index.html" class="text-sm font-medium text-slate-600 hover:text-cyan-600 transition nav-link">首页</a>
-                    <a href="partners.html" class="text-sm font-medium text-slate-600 hover:text-cyan-600 transition nav-link">团队与合作</a>
-                    <a href="research.html" class="text-sm font-medium text-slate-600 hover:text-cyan-600 transition nav-link">核心方向</a>
-                    <a href="events.html" class="text-sm font-medium text-slate-600 hover:text-cyan-600 transition nav-link">活动</a>
-                    <a href="projects.html" class="text-sm font-medium text-slate-600 hover:text-cyan-600 transition nav-link">成果</a>
-                    <a href="join.html" class="bg-slate-800 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-cyan-600 transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5">加入我们</a>
-                </div>
-
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-cyan-600 focus:outline-none p-2 rounded-md hover:bg-slate-100 transition">
-                        <svg id="icon-menu" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                        <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
+    <nav class="fixed top-0 left-0 right-0 z-50 nav-shell transition-all duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="h-16 flex items-center justify-between gap-4">
+          <a href="${resolveHref('index.html')}" class="flex items-center gap-3">
+            <img src="${resolveHref('assets/images/logo.png')}" alt="UESTC IA Logo" class="w-9 h-9 rounded-full object-cover border border-cyan-300/40 shadow-md">
+            <div>
+              <p class="nav-brand text-sm font-bold text-slate-800 leading-none">UESTC IA</p>
+              <p class="text-[11px] text-slate-500 leading-none mt-1">Interdisciplinary Association</p>
             </div>
-        </div>
+          </a>
 
-        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-md border-t border-slate-100 shadow-xl absolute w-full left-0 top-16 z-40">
-            <div class="px-4 pt-4 pb-6 space-y-2 flex flex-col">
-                <a href="index.html" class="block px-4 py-3 rounded-lg text-base font-medium text-slate-700 hover:text-cyan-600 hover:bg-cyan-50 transition">首页</a>
-                <a href="partners.html" class="block px-4 py-3 rounded-lg text-base font-medium text-slate-700 hover:text-cyan-600 hover:bg-cyan-50 transition">团队与合作</a>
-                <a href="research.html" class="block px-4 py-3 rounded-lg text-base font-medium text-slate-700 hover:text-cyan-600 hover:bg-cyan-50 transition">核心方向</a>
-                <a href="events.html" class="block px-4 py-3 rounded-lg text-base font-medium text-slate-700 hover:text-cyan-600 hover:bg-cyan-50 transition">活动</a>
-                <a href="projects.html" class="block px-4 py-3 rounded-lg text-base font-medium text-slate-700 hover:text-cyan-600 hover:bg-cyan-50 transition">成果</a>
-                <a href="join.html" class="block px-4 py-3 mt-4 text-center rounded-lg text-base font-medium bg-slate-800 text-white hover:bg-cyan-600 shadow-md transition">加入我们</a>
-            </div>
+          <div class="hidden md:flex items-center gap-7">${navDesktop}
+            <a href="${resolveHref('join.html')}" class="btn btn-primary">加入我们</a>
+          </div>
+
+          <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg border border-cyan-100/70 bg-white/70 text-slate-700" aria-label="切换导航菜单" aria-expanded="false" aria-controls="mobile-menu">
+            <svg id="icon-menu" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
         </div>
+      </div>
+
+      <div id="mobile-menu" class="mobile-menu-panel hidden md:hidden absolute top-16 left-0 right-0 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 py-4">${navMobile}
+          <a href="${resolveHref('join.html')}" class="btn btn-primary w-full mt-2">加入我们</a>
+        </div>
+      </div>
     </nav>
-    `;
-  document.body.insertAdjacentHTML("afterbegin", navbarHTML);
+  `;
 
-  // 2. 绑定交互事件
-  const btn = document.getElementById("mobile-menu-btn");
-  const menu = document.getElementById("mobile-menu");
-  const iconMenu = document.getElementById("icon-menu");
-  const iconClose = document.getElementById("icon-close");
+  document.body.insertAdjacentHTML('afterbegin', navbarHTML);
 
-  if (btn && menu) {
-    console.log("Mobile menu elements found, attaching listener.");
-    btn.addEventListener("click", () => {
-      // 切换菜单显示
-      menu.classList.toggle("hidden");
+  const footerHTML = `
+    <footer class="site-footer py-10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+        <div>
+          <p class="text-en text-sm font-semibold tracking-[0.18em] text-slate-200">UESTC IA</p>
+          <p class="text-xs text-slate-300/80 mt-1">电子科技大学交叉学科协会 · 2026</p>
+        </div>
+        <div class="flex items-center gap-5 text-sm text-slate-300">
+          <a href="${resolveHref('join.html')}" class="hover:text-white transition-colors">加入我们</a>
+          <a href="${resolveHref('partners.html')}" class="hover:text-white transition-colors">合作联系</a>
+        </div>
+      </div>
+    </footer>
+  `;
 
-      // 切换图标显示
-      if (menu.classList.contains("hidden")) {
-        iconMenu.classList.remove("hidden");
-        iconClose.classList.add("hidden");
-      } else {
-        iconMenu.classList.add("hidden");
-        iconClose.classList.remove("hidden");
+  document.body.insertAdjacentHTML('beforeend', footerHTML);
+
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const iconMenu = document.getElementById('icon-menu');
+  const iconClose = document.getElementById('icon-close');
+
+  if (menuBtn && menu && iconMenu && iconClose) {
+    menuBtn.addEventListener('click', () => {
+      const isHidden = menu.classList.toggle('hidden');
+      iconMenu.classList.toggle('hidden', !isHidden);
+      iconClose.classList.toggle('hidden', isHidden);
+      menuBtn.setAttribute('aria-expanded', String(!isHidden));
+    });
+
+    menu.addEventListener('click', (event) => {
+      if (event.target instanceof HTMLElement && event.target.tagName === 'A') {
+        menu.classList.add('hidden');
+        iconMenu.classList.remove('hidden');
+        iconClose.classList.add('hidden');
+        menuBtn.setAttribute('aria-expanded', 'false');
       }
     });
-  } else {
-    console.error("Error: Mobile menu button not found via JS.");
   }
-
-  // 3. 注入页脚 (Footer) - 保持不变
-  const footerHTML = `
-    <footer class="bg-slate-900 text-slate-500 py-12 mt-20 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
-            <div class="mb-4 md:mb-0">
-                <span class="text-slate-300 font-bold tracking-wider">UESTC IA</span>
-                <span class="mx-2 text-slate-700">|</span>
-                <span class="text-xs">电子科技大学交叉学科协会 © 2025 Website Built by Zhixu</span>
-            </div>
-            <div class="flex space-x-6 text-sm">
-                <a href="#" class="hover:text-cyan-400 transition">关于我们</a>
-                <a href="#" class="hover:text-cyan-400 transition">联系方式</a>
-            </div>
-        </div>
-    </footer>
-    `;
-  document.body.insertAdjacentHTML("beforeend", footerHTML);
 });

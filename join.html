@@ -1,133 +1,20 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="assets/images/logo.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="assets/images/logo.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="assets/images/logo.ico">
+<html lang="zh-CN" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/images/logo.ico" type="image/x-icon" />
     <title>加入我们 | UESTC IA</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
     <script src="assets/js/main.js" defer></script>
-</head>
-<body class="pt-24 bg-slate-50">
-
-    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 min-h-screen mb-20">
-
-        <!-- Header -->
-        <div class="text-center mb-16 animate-fade-in">
-            <h1 class="text-4xl font-bold text-slate-800 mb-4">Ready to Define the Future?</h1>
-            <p class="text-lg text-slate-600 max-w-2xl mx-auto">
-                这里没有传统的课堂，只有真实的挑战。加入我们，构建你的“第二课堂”。
-            </p>
-        </div>
-
-        <!-- 1. Why Join (Value Proposition) -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-            <div class="text-center p-6 bg-white rounded-xl border border-slate-100 shadow-sm hover:-translate-y-1 transition duration-300">
-                <div class="w-12 h-12 bg-cyan-100 text-cyan-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-rocket text-xl"></i>
-                </div>
-                <h3 class="font-bold text-slate-800 mb-2">前沿技术栈</h3>
-                <p class="text-sm text-slate-500">接触 Deep Learning, Brain Science 等跨学科前沿，填补传统教育空白。</p>
-            </div>
-            <div class="text-center p-6 bg-white rounded-xl border border-slate-100 shadow-sm hover:-translate-y-1 transition duration-300">
-                <div class="w-12 h-12 bg-cyan-100 text-cyan-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-network-wired text-xl"></i>
-                </div>
-                <h3 class="font-bold text-slate-800 mb-2">产学研资源</h3>
-                <p class="text-sm text-slate-500">直接对接顶尖实验室导师与头部企业（深势科技等）实习机会。</p>
-            </div>
-            <div class="text-center p-6 bg-white rounded-xl border border-slate-100 shadow-sm hover:-translate-y-1 transition duration-300">
-                <div class="w-12 h-12 bg-cyan-100 text-cyan-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-user-graduate text-xl"></i>
-                </div>
-                <h3 class="font-bold text-slate-800 mb-2">精英社区</h3>
-                <p class="text-sm text-slate-500">与来自信通、计算机、生医、经管的顶尖同学组队，拓展视野。</p>
-            </div>
-        </div>
-
-        <!-- 2. How to Join (CTA Section) - 重构二维码设计 -->
-        <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 md:p-8 shadow-2xl relative overflow-hidden">
-            <!-- 装饰背景 -->
-            <div class="absolute -top-20 -right-20 w-64 h-64 bg-cyan-600 rounded-full blur-[80px] opacity-30"></div>
-            <div class="absolute -bottom-20 -left-20 w-48 h-48 bg-blue-500 rounded-full blur-[60px] opacity-20"></div>
-
-            <div class="relative z-10">
-                <h2 class="text-2xl font-bold text-white mb-8 text-center md:text-left">入会流程</h2>
-                
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <!-- Left: Steps -->
-                    <div class="space-y-6">
-                        <div class="flex items-start gap-4">
-                            <div class="mt-1 flex-shrink-0 w-8 h-8 rounded-full bg-cyan-600 flex items-center justify-center font-bold text-sm text-white">1</div>
-                            <div class="flex-1">
-                                <h4 class="font-bold text-lg text-white">加入咨询群 / 关注频道</h4>
-                                <p class="text-slate-300 text-sm mt-1">扫描右侧二维码，获取最新招募简章和活动通知。</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="mt-1 flex-shrink-0 w-8 h-8 rounded-full bg-slate-600 flex items-center justify-center font-bold text-sm text-white">2</div>
-                            <div class="flex-1">
-                                <h4 class="font-bold text-lg text-white">提交申请表</h4>
-                                <p class="text-slate-300 text-sm mt-1">每年 3月 / 9月 开启纳新。填写并提交个人简历与意向方向。</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="mt-1 flex-shrink-0 w-8 h-8 rounded-full bg-slate-600 flex items-center justify-center font-bold text-sm text-white">3</div>
-                            <div class="flex-1">
-                                <h4 class="font-bold text-lg text-white">面试与定组</h4>
-                                <p class="text-slate-300 text-sm mt-1">通过核心骨干/导师面试，确定加入的项目组。</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right: QR Codes - 重构设计 -->
-                    <div class="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
-                        <div class="text-center mb-6">
-                            <h3 class="text-white font-bold text-lg mb-1">扫码加入我们</h3>
-                            <p class="text-slate-400 text-xs">选择适合你的加入方式</p>
-                        </div>
-                        
-                        <div class="grid grid-cols-1 gap-6">
-                            <!-- TechPulse Channel QR Code -->
-                            <div class="bg-slate-900 rounded-xl p-4 border border-cyan-900/50 hover:border-cyan-500 transition-all duration-300">
-                                <div class="flex flex-col items-center">
-                                    <div class="w-full max-w-[200px] h-48 bg-black/30 rounded-lg flex items-center justify-center overflow-hidden mx-auto mb-3">
-                                        <img src="assets/images/join/TechPulse.png" alt="TechPulse 官方频道" class="max-w-full max-h-full object-contain p-2">
-                                    </div>
-                                    <div class="text-center">
-                                        <span class="block text-cyan-400 font-bold text-sm mb-0.5">TechPulse 频道</span>
-                                        <span class="text-slate-400 text-xs">获取最新技术动态</span>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- QQ Group QR Code -->
-                            <div class="bg-slate-900 rounded-xl p-4 border border-blue-900/50 hover:border-blue-400 transition-all duration-300">
-                                <div class="flex flex-col items-center">
-                                    <div class="w-full max-w-[200px] h-48 bg-black/30 rounded-lg flex items-center justify-center overflow-hidden mx-auto mb-3">
-                                        <img src="assets/images/join/QQgroup.jpg" alt="QQ 招募咨询群" class="max-w-full max-h-full object-contain p-2">
-                                    </div>
-                                    <div class="text-center">
-                                        <span class="block text-blue-300 font-bold text-sm mb-0.5">招募咨询群</span>
-                                        <span class="text-slate-400 text-xs">直接咨询招新事宜</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="mt-4 text-center">
-                            <p class="text-[10px] text-slate-500">* 请认准官方账号，谨防假冒</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+  </head>
+  <body class="pt-24">
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 min-h-screen mb-16">
+      <div class="title-block mb-10"><div class="title-en">Join UESTC IA</div><h1 class="text-4xl font-bold">加入交叉学科协会</h1><p>欢迎对跨学科研究、产业实践和项目协作感兴趣的同学加入我们。</p></div>
+      <section class="grid md:grid-cols-3 gap-4 mb-8"><article class="card-core p-6 text-center"><i class="fas fa-rocket text-2xl text-cyan-600 mb-3"></i><h3 class="text-2xl font-bold mb-2">前沿训练</h3><p>覆盖大模型、科研方法与工程实践。</p></article><article class="card-core p-6 text-center"><i class="fas fa-network-wired text-2xl text-cyan-600 mb-3"></i><h3 class="text-2xl font-bold mb-2">资源连接</h3><p>连接导师、企业与校友网络。</p></article><article class="card-core p-6 text-center"><i class="fas fa-user-graduate text-2xl text-cyan-600 mb-3"></i><h3 class="text-2xl font-bold mb-2">成长路径</h3><p>通过真实项目积累作品和经验。</p></article></section>
+      <section class="card-core p-6 md:p-8 mb-8"><div class="section-title"><h2 class="text-3xl font-bold">加入流程</h2></div><p class="mb-5">扫码入群，提交报名，完成交流面谈后进入对应小组。</p><div class="grid md:grid-cols-2 gap-5"><div class="surface-2 p-4"><h3 class="text-xl font-bold mb-3">TechPulse 频道</h3><img src="assets/images/join/TechPulse.png" alt="TechPulse" class="w-full max-w-[240px] mx-auto rounded-xl" /></div><div class="surface-2 p-4"><h3 class="text-xl font-bold mb-3">QQ群</h3><img src="assets/images/join/QQgroup.jpg" alt="QQ群" class="w-full max-w-[240px] mx-auto rounded-xl" /></div></div></section>
     </main>
-</body>
+  </body>
 </html>
