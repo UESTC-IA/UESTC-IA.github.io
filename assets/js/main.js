@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { href: 'partners.html', label: '合作与导师' },
     { href: 'research.html', label: '研究方向' },
     { href: 'events.html', label: '活动' },
-    { href: 'projects.html', label: '项目' }
+    { href: 'projects.html', label: '产品宣传' }
   ];
 
   const entryScript = document.querySelector('script[src*="assets/js/main.js"]');
