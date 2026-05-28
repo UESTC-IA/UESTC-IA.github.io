@@ -1,220 +1,40 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-CN" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="assets/images/logo.ico" type="image/x-icon" />
-    <title>合作与导师 | UESTC IA</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <script src="assets/js/main.js" defer></script>
-  </head>
-  <body class="pt-24">
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
-      <div class="title-block mb-10">
-        <div class="title-en">Partners Network</div>
-        <h1 class="text-4xl font-bold">导师与合作机构</h1>
-        <p>
-          以学院导师团队为学术中枢，以产业与校友网络为外部协同，构建连续合作生态。
-        </p>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>合作与导师 | UESTC IA</title>
+  <link rel="icon" href="assets/images/logo.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="assets/images/logo.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="assets/images/logo.ico" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/data.js" defer></script>
+  <script src="assets/js/render-partners.js" defer></script>
+</head>
+<body class="pt-24">
+  <main class="ia-page pb-12">
+    <header class="ia-page-header">
+      <div class="ia-kicker">Partners & Advisors</div>
+      <h1 class="ia-page-title">合作与导师</h1>
+    </header>
 
-      <section class="mb-12">
-        <div class="section-title">
-          <h2 class="text-3xl font-bold">导师顾问</h2>
-        </div>
-        <div class="advisor-grid">
-          <article class="advisor-card card-core">
-            <div class="flex gap-4 items-center">
-              <div class="avatar">
-                <img
-                  src="assets/images/partners/members/DezhongYao.png"
-                  alt="yaodezhong教授"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-              <div>
-                <h3 class="text-lg font-bold">
-                  <a
-                    href="http://faculty.uestc.edu.cn/yaodezhong/zh_CN/index.htm"
-                    target="_blank"
-                    >尧德中 教授</a
-                  >
-                </h3>
-                <p class="text-xs text-muted text-en">Neuroscience & AI</p>
-              </div>
-            </div>
-            <p class="text-sm mt-3">电子科技大学生命学院创院院长</p>
-          </article>
-          <article class="advisor-card card-core">
-            <div class="flex gap-4 items-center">
-              <div class="avatar">
-                <img
-                  src="assets/images/partners/members/pedro.png"
-                  alt="Pedro教授"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-              <div>
-                <h3 class="text-lg font-bold">
-                  <a
-                    href="https://www.life.uestc.edu.cn/sznr2.jsp?urltype=news.NewsContentUrl&wbtreeid=1219&wbnewsid=3398"
-                    target="_blank"
-                    >Pedro 教授</a
-                  >
-                </h3>
-                <p class="text-xs text-muted text-en">Cognitive Science</p>
-              </div>
-            </div>
-            <p class="text-sm mt-3">古巴科学院院士，神经信息学权威专家。</p>
-          </article>
-          <article class="advisor-card card-core">
-            <div class="flex gap-4 items-center">
-              <div class="avatar">
-                <img
-                  src="assets/images/partners/members/fanzhang.png"
-                  alt="zhangfan教授"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-              <div>
-                <h3 class="text-lg font-bold">
-                  <a
-                    href="https://faculty.uestc.edu.cn/fanzhang/zh_CN/index/479541/list/index.htm"
-                    target="_blank"
-                    >张帆 教授</a
-                  >
-                </h3>
-                <p class="text-xs text-muted text-en">Signal & Perception</p>
-              </div>
-            </div>
-            <p class="text-sm mt-3">
-              国家青年人才，关注脑神经影像计算，弥散磁共振，医学图像分析。
-            </p>
-          </article>
-          <article class="advisor-card card-core">
-            <div class="flex gap-4 items-center">
-              <div class="avatar">
-                <img
-                  src="assets/images/partners/members/dingzheng.png"
-                  alt="郑丁教授"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-              <div>
-                <h3 class="text-lg font-bold">
-                  <a
-                    href="https://sose.uestc.edu.cn/info/1184/7923.htm"
-                    target="_blank"
-                    >郑丁 教授</a
-                  >
-                </h3>
-                <p class="text-xs text-muted text-en">Software Engineering</p>
-              </div>
-            </div>
-            <p class="text-sm mt-3">
-              海外优青，研究半导体器件的人机交互柔性可穿戴技术
-            </p>
-          </article>
-          <article class="advisor-card card-core">
-            <div class="flex gap-4 items-center">
-              <div class="avatar">
-                <img
-                  src="assets/images/partners/members/mingwenjian.png"
-                  alt="文明健教授"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-              <div>
-                <h3 class="text-lg font-bold">
-                  <a
-                    href="https://www.iffs.uestc.edu.cn/info/1116/5944.htm"
-                    target="_blank"
-                    >文明健 教授</a
-                  >
-                </h3>
-                <p class="text-xs text-muted text-en">Industry Foresight</p>
-              </div>
-            </div>
-            <p class="text-sm mt-3">
-              数据驱动建模，不确定性量化，能源材料与器件
-            </p>
-          </article>
-        </div>
-      </section>
+    <section class="ia-section">
+      <h2 class="ia-section-title">学术指导委员会</h2>
+      <div id="advisorsGrid" class="grid gap-5 md:grid-cols-2 lg:grid-cols-3" aria-live="polite"></div>
+    </section>
 
-      <section class="mb-10">
-        <div class="section-title">
-          <h2 class="text-3xl font-bold">机构合作</h2>
-        </div>
-        <div class="logo-wall">
-          <a
-            href="https://www.life.uestc.edu.cn/"
-            target="_blank"
-            class="logo-tile"
-            ><img
-              src="assets/images/partners/orgs/uestc-life.png"
-              alt="电子科技大学生命学院"
-              class="max-h-14 max-w-full object-contain"
-          /></a>
-          <a href="https://www.dp.tech" target="_blank" class="logo-tile"
-            ><img
-              src="assets/images/partners/orgs/DPTech.png"
-              alt="DP Technology"
-              class="max-h-14 max-w-full object-contain"
-          /></a>
-          <a href="https://www.asiainfo.com/" target="_blank" class="logo-tile"
-            ><img
-              src="assets/images/partners/orgs/Asiainfo.jpg"
-              alt="亚信科技"
-              class="max-h-14 max-w-full object-contain"
-          /></a>
-          <a href="https://www.migu.cn/" target="_blank" class="logo-tile"
-            ><img
-              src="assets/images/partners/orgs/migu.png"
-              alt="咪咕"
-              class="max-h-14 max-w-full object-contain"
-          /></a>
-          <a href="https://www.lanyun.net/" target="_blank" class="logo-tile"
-            ><img
-              src="assets/images/partners/orgs/lanyun.png"
-              alt="蓝耘科技"
-              class="max-h-14 max-w-full object-contain"
-          /></a>
-        </div>
-      </section>
+    <section class="ia-section">
+      <h2 class="ia-section-title">战略支撑单位</h2>
+      <div id="organizationsGrid" class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3" aria-live="polite"></div>
+    </section>
 
-      <section>
-        <div class="section-title">
-          <h2 class="text-3xl font-bold">校友与生态伙伴</h2>
-        </div>
-        <div class="logo-wall">
-          <a
-            href="partners/changing-view.html"
-            target="_blank"
-            class="logo-tile"
-            ><img
-              src="assets/images/partners/orgs/changing-view.png"
-              alt="Changing View"
-              class="max-h-14 max-w-full object-contain"
-          /></a>
-          <a href="#" class="logo-tile"
-            ><img
-              src="assets/images/partners/orgs/weiyang.png"
-              alt="微漾"
-              class="max-h-14 max-w-full object-contain"
-          /></a>
-          <a
-            href="https://mp.weixin.qq.com/s/oeJ3EkE4_VP3RJDYAC3HYA"
-            target="_blank"
-            class="logo-tile"
-            ><img
-              src="assets/images/partners/orgs/Asher.jpg"
-              alt="Asher"
-              class="max-h-14 max-w-full object-contain"
-          /></a>
-        </div>
-      </section>
-    </main>
-  </body>
+    <section class="ia-section">
+      <h2 class="ia-section-title">合作伙伴</h2>
+      <div id="partnersGrid" class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3" aria-live="polite"></div>
+    </section>
+  </main>
+</body>
 </html>

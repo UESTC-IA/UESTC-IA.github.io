@@ -1,107 +1,182 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const links = [
-    { href: 'index.html', label: '首页' },
-    { href: 'partners.html', label: '合作与导师' },
-    { href: 'research.html', label: '研究方向' },
-    { href: 'events.html', label: '活动' },
-    { href: 'projects.html', label: '产品宣传' }
+(function () {
+  const scriptEl = document.currentScript;
+  const src = scriptEl ? scriptEl.getAttribute("src") || "" : "";
+  const marker = "assets/js/main.js";
+  const basePath = document.body?.dataset.basePath || (src.includes(marker) ? src.slice(0, src.indexOf(marker)) : "");
+
+  const navItems = [
+    { label: "首页", href: "index.html" },
+    { label: "社团活动", href: "events.html" },
+    { label: "产品宣传", href: "projects.html" },
+    { label: "合作与导师", href: "partners.html" },
+    { label: "核心成员", href: "members.html" },
   ];
 
-  const entryScript = document.querySelector('script[src*="assets/js/main.js"]');
-  const srcAttr = entryScript ? entryScript.getAttribute('src') || '' : '';
-  const basePrefix = srcAttr.startsWith('../') ? '../' : '';
+  function href(path) {
+    return `${basePath}${path}`;
+  }
 
-  const resolveHref = (href) => `${basePrefix}${href}`;
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  function currentFile() {
+    const path = window.location.pathname;
+    const file = path.endsWith("/") ? "index.html" : path.split("/").pop();
+    return file || "index.html";
+  }
 
-  const navDesktop = links
-    .map((item) => {
-      const current = currentPage === item.href ? ' aria-current="page"' : '';
-      return `<a href="${resolveHref(item.href)}" class="nav-link text-sm font-semibold"${current}>${item.label}</a>`;
-    })
-    .join('');
+  function isActive(item) {
+    const path = window.location.pathname;
+    if (item.href === "events.html" && path.includes("/events/")) return true;
+    if (item.href === "partners.html" && path.includes("/partners/")) return true;
+    return currentFile() === item.href;
+  }
 
-  const navMobile = links
-    .map((item) => {
-      const current = currentPage === item.href ? ' aria-current="page"' : '';
-      return `<a href="${resolveHref(item.href)}" class="block px-4 py-3 rounded-xl text-[15px] font-semibold nav-link"${current}>${item.label}</a>`;
-    })
-    .join('');
+  function renderNavLinks(kind) {
+    return navItems
+      .map((item) => {
+        const activeClass = isActive(item) ? " is-active" : "";
+        const aria = isActive(item) ? ' aria-current="page"' : "";
+        if (kind === "mobile") {
+          return `<a href="${href(item.href)}" class="ia-mobile-link${activeClass}"${aria}>${item.label}</a>`;
+        }
+        return `<a href="${href(item.href)}" class="nav-link text-sm font-semibold${activeClass}"${aria}>${item.label}</a>`;
+      })
+      .join("");
+  }
 
-  const navbarHTML = `
-    <nav class="fixed top-0 left-0 right-0 z-50 nav-shell transition-all duration-300">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="h-16 flex items-center justify-between gap-4">
-          <a href="${resolveHref('index.html')}" class="flex items-center gap-3">
-            <img src="${resolveHref('assets/images/logo.png')}" alt="UESTC IA Logo" class="w-9 h-9 rounded-full object-cover border border-cyan-300/40 shadow-md">
-            <div>
-              <p class="nav-brand text-sm font-bold text-slate-800 leading-none">UESTC IA</p>
-              <p class="text-[11px] text-slate-500 leading-none mt-1">Interdisciplinary Association</p>
-            </div>
+  function insertNavbar() {
+    const navbarHTML = `
+      <nav class="ia-navbar fixed top-0 z-50 w-full">
+        <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+          <a href="${href("index.html")}" class="flex items-center gap-3" aria-label="UESTC IA 首页">
+            <img src="${href("assets/images/logo.png")}" class="ia-brand-mark" alt="UESTC IA Logo" onerror="this.style.display='none'">
+            <span class="ia-text-ink text-lg font-bold">UESTC IA</span>
           </a>
 
-          <div class="hidden md:flex items-center gap-7">${navDesktop}
-            <a href="${resolveHref('join.html')}" class="btn btn-primary">加入我们</a>
+          <div class="hidden items-center gap-7 md:flex">
+            ${renderNavLinks("desktop")}
           </div>
 
-          <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg border border-cyan-100/70 bg-white/70 text-slate-700" aria-label="切换导航菜单" aria-expanded="false" aria-controls="mobile-menu">
-            <svg id="icon-menu" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          <button id="mobile-menu-btn" class="ia-btn ia-btn-ghost h-10 w-10 p-0 md:hidden" type="button" aria-label="打开导航菜单" aria-controls="mobile-menu" aria-expanded="false">
+            <svg id="icon-menu" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7h16M4 12h16M4 17h16" />
             </svg>
-            <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="hidden h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 18 6M6 6l12 12" />
             </svg>
           </button>
         </div>
-      </div>
 
-      <div id="mobile-menu" class="mobile-menu-panel hidden md:hidden absolute top-16 left-0 right-0 shadow-lg">
-        <div class="max-w-7xl mx-auto px-4 py-4">${navMobile}
-          <a href="${resolveHref('join.html')}" class="btn btn-primary w-full mt-2">加入我们</a>
+        <div id="mobile-menu" class="ia-navbar hidden border-t md:hidden">
+          <div class="flex flex-col gap-1 px-4 py-4">
+            ${renderNavLinks("mobile")}
+          </div>
         </div>
-      </div>
-    </nav>
-  `;
+      </nav>
+    `;
 
-  document.body.insertAdjacentHTML('afterbegin', navbarHTML);
+    document.body.insertAdjacentHTML("afterbegin", navbarHTML);
+  }
 
-  const footerHTML = `
-    <footer class="site-footer py-10">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-        <div>
-          <p class="text-en text-sm font-semibold tracking-[0.18em] text-slate-200">UESTC IA</p>
-          <p class="text-xs text-slate-300/80 mt-1">电子科技大学交叉学科协会 · 2026</p>
-        </div>
-        <div class="flex items-center gap-5 text-sm text-slate-300">
-          <a href="${resolveHref('join.html')}" class="hover:text-white transition-colors">加入我们</a>
-          <a href="${resolveHref('partners.html')}" class="hover:text-white transition-colors">合作联系</a>
-        </div>
-      </div>
-    </footer>
-  `;
+  function bindNavbar() {
+    const btn = document.getElementById("mobile-menu-btn");
+    const menu = document.getElementById("mobile-menu");
+    const iconMenu = document.getElementById("icon-menu");
+    const iconClose = document.getElementById("icon-close");
 
-  document.body.insertAdjacentHTML('beforeend', footerHTML);
+    if (!btn || !menu || !iconMenu || !iconClose) return;
 
-  const menuBtn = document.getElementById('mobile-menu-btn');
-  const menu = document.getElementById('mobile-menu');
-  const iconMenu = document.getElementById('icon-menu');
-  const iconClose = document.getElementById('icon-close');
+    const setOpen = (open) => {
+      menu.classList.toggle("hidden", !open);
+      iconMenu.classList.toggle("hidden", open);
+      iconClose.classList.toggle("hidden", !open);
+      btn.setAttribute("aria-expanded", String(open));
+      btn.setAttribute("aria-label", open ? "关闭导航菜单" : "打开导航菜单");
+    };
 
-  if (menuBtn && menu && iconMenu && iconClose) {
-    menuBtn.addEventListener('click', () => {
-      const isHidden = menu.classList.toggle('hidden');
-      iconMenu.classList.toggle('hidden', !isHidden);
-      iconClose.classList.toggle('hidden', isHidden);
-      menuBtn.setAttribute('aria-expanded', String(!isHidden));
+    btn.addEventListener("click", () => {
+      setOpen(menu.classList.contains("hidden"));
     });
 
-    menu.addEventListener('click', (event) => {
-      if (event.target instanceof HTMLElement && event.target.tagName === 'A') {
-        menu.classList.add('hidden');
-        iconMenu.classList.remove('hidden');
-        iconClose.classList.add('hidden');
-        menuBtn.setAttribute('aria-expanded', 'false');
+    menu.addEventListener("click", (event) => {
+      if (event.target.closest("a")) setOpen(false);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") setOpen(false);
+    });
+  }
+
+  function bindRipple() {
+    document.addEventListener("click", (event) => {
+      const button = event.target.closest(".ia-btn");
+      if (!button) return;
+
+      const rect = button.getBoundingClientRect();
+      const ripple = document.createElement("span");
+      ripple.className = "ia-ripple";
+      ripple.style.left = `${event.clientX - rect.left}px`;
+      ripple.style.top = `${event.clientY - rect.top}px`;
+      button.appendChild(ripple);
+      ripple.addEventListener("animationend", () => ripple.remove(), { once: true });
+    });
+  }
+
+  function insertFooter() {
+    if (document.body.dataset.noFooter === "true") return;
+
+    const footerHTML = `
+      <footer class="ia-footer">
+        <div class="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-10 sm:px-6 lg:px-8">
+          <div>
+            <div class="ia-text-ink font-bold">UESTC Interdisciplinary Association</div>
+            <div class="mt-1 text-xs">电子科技大学交叉学科协会 © 2026</div>
+          </div>
+        </div>
+      </footer>
+    `;
+    document.body.insertAdjacentHTML("beforeend", footerHTML);
+  }
+
+  function bindCopyButtons() {
+    document.addEventListener("click", (event) => {
+      const btn = event.target.closest("[data-copy]");
+      if (!btn) return;
+
+      const text = btn.dataset.copy;
+      const toast = btn.querySelector(".home-contact-copy-toast");
+
+      // Copy to clipboard
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text);
+      } else {
+        // Fallback for older browsers
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        ta.remove();
+      }
+
+      // Show toast animation
+      if (toast) {
+        toast.classList.remove("is-visible");
+        // Force reflow to restart animation
+        void toast.offsetWidth;
+        toast.classList.add("is-visible");
+        toast.addEventListener("animationend", () => {
+          toast.classList.remove("is-visible");
+        }, { once: true });
       }
     });
   }
-});
+
+  document.addEventListener("DOMContentLoaded", () => {
+    insertNavbar();
+    bindNavbar();
+    bindRipple();
+    bindCopyButtons();
+    insertFooter();
+  });
+})();
