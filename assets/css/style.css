@@ -774,20 +774,6 @@ img {
     linear-gradient(330deg, rgba(184, 167, 131, 0.18), transparent 50%);
 }
 
-.card-featured {
-  border-radius: var(--radius-md);
-  border: 2px solid rgba(6, 182, 212, 0.3);
-  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-  box-shadow: 0 8px 32px rgba(6, 182, 212, 0.15);
-  transition: transform var(--motion-fast) ease, box-shadow var(--motion-base) ease, border-color var(--motion-base) ease;
-}
-
-.card-featured:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(6, 182, 212, 0.25);
-  border-color: rgba(6, 182, 212, 0.5);
-}
-
 .product-card-topline {
   display: flex;
   align-items: center;
