@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>社团活动 | UESTC IA</title>
+  <title>核心成员 | UESTC IA</title>
   <link rel="icon" href="assets/images/logo.ico" type="image/x-icon" />
   <link rel="shortcut icon" href="assets/images/logo.ico" type="image/x-icon" />
   <link rel="apple-touch-icon" href="assets/images/logo.ico" />
@@ -12,16 +12,16 @@
   <link rel="stylesheet" href="assets/css/style.css" />
   <script src="assets/js/main.js" defer></script>
   <script src="assets/js/data.js" defer></script>
-  <script src="assets/js/render-events.js" defer></script>
+  <script src="assets/js/render-members.js" defer></script>
 </head>
 <body class="pt-24">
-  <main class="ia-narrow min-h-screen pb-12">
+  <main class="ia-page pb-12">
     <header class="ia-page-header">
-      <div class="ia-kicker">Club Activities</div>
-      <h1 class="ia-page-title">社团活动</h1>
+      <div class="ia-kicker">Core Members</div>
+      <h1 class="ia-page-title">核心成员</h1>
     </header>
 
-    <section class="ia-timeline" id="eventsTimeline" aria-live="polite"></section>
+    <div id="membersRoot" aria-live="polite"></div>
   </main>
 </body>
 </html>
