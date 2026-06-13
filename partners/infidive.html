@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>infiDive（潜入梦科技）创业招聘 | UESTC IA</title>
+  <link rel="icon" href="../assets/images/logo.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="../assets/images/logo.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="../assets/images/logo.ico" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <script src="../assets/js/main.js" defer></script>
+  <style>
+    .infidive-page {
+      width: min(1120px, calc(100% - 2rem));
+      min-height: calc(100vh - 13rem);
+      margin: 0 auto;
+      padding-bottom: 4.5rem;
+    }
+
+    .infidive-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      min-height: 40px;
+      padding: 0.5rem 0.8rem;
+      color: var(--ia-primary-deep);
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      border: 1px solid var(--ia-line);
+      border-radius: var(--ia-radius);
+      background: rgba(255, 255, 255, 0.56);
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+    }
+
+    .infidive-back:hover {
+      border-color: rgba(111, 143, 146, 0.42);
+      background: rgba(255, 255, 255, 0.86);
+      transform: translateY(-2px);
+    }
+
+    .infidive-panel {
+      border: 1px solid var(--ia-line);
+      border-radius: var(--ia-radius);
+      background: var(--ia-surface-strong);
+      box-shadow: var(--ia-shadow-soft);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .infidive-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.62fr);
+      gap: 1.25rem;
+      margin-top: 1.75rem;
+      align-items: stretch;
+    }
+
+    .infidive-hero-main {
+      position: relative;
+      min-height: 470px;
+      padding: clamp(1.35rem, 4vw, 3rem);
+      overflow: hidden;
+      color: #fff;
+      background:
+        linear-gradient(135deg, rgba(27, 32, 42, 0.96), rgba(38, 42, 55, 0.92)),
+        linear-gradient(90deg, rgba(255, 86, 103, 0.16), rgba(66, 220, 230, 0.08));
+    }
+
+    .infidive-hero-main::before {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      content: "";
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+      background-size: 46px 46px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.82), transparent 88%);
+    }
+
+    .infidive-hero-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 100%;
+    }
+
+    .infidive-badge {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      min-height: 30px;
+      padding: 0.32rem 0.7rem;
+      color: #ff7c77;
+      font-size: 0.78rem;
+      font-weight: 800;
+      border: 1px solid rgba(255, 124, 119, 0.38);
+      border-radius: var(--ia-radius);
+      background: rgba(255, 124, 119, 0.12);
+    }
+
+    .infidive-title {
+      margin-top: 1rem;
+      color: #fff;
+      font-size: clamp(2.15rem, 5.2vw, 4.8rem);
+      font-weight: 800;
+      line-height: 1.02;
+    }
+
+    .infidive-hero-copy {
+      max-width: 740px;
+      margin-top: 1.2rem;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 1.04rem;
+      line-height: 1.85;
+    }
+
+    .infidive-hero-copy strong {
+      color: #ff8a74;
+      font-weight: 800;
+    }
+
+    .infidive-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1.45rem;
+    }
+
+    .infidive-chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 0.35rem 0.7rem;
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 0.8rem;
+      font-weight: 800;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: var(--ia-radius);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .infidive-belief {
+      margin-top: 1.55rem;
+      padding: 1rem;
+      color: rgba(255, 255, 255, 0.78);
+      font-family: "Inter", "Noto Sans SC", sans-serif;
+      font-size: 0.88rem;
+      line-height: 1.75;
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      border-radius: var(--ia-radius);
+      background: rgba(2, 6, 18, 0.32);
+    }
+
+    .infidive-belief strong {
+      color: #7be3e8;
+    }
+
+    .infidive-side {
+      display: grid;
+      gap: 1rem;
+      align-content: stretch;
+    }
+
+    .infidive-side-card {
+      padding: 1.3rem;
+    }
+
+    .infidive-side-label {
+      color: var(--ia-muted);
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .infidive-side-value {
+      margin-top: 0.5rem;
+      color: var(--ia-ink);
+      font-size: 1.15rem;
+      font-weight: 800;
+      line-height: 1.45;
+    }
+
+    .infidive-side-note {
+      margin-top: 0.7rem;
+      color: var(--ia-muted);
+      font-size: 0.92rem;
+      line-height: 1.8;
+    }
+
+    .infidive-section {
+      margin-top: 1.5rem;
+      padding: clamp(1.2rem, 3vw, 1.7rem);
+    }
+
+    .infidive-section-head {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      align-items: end;
+      justify-content: space-between;
+      margin-bottom: 1.1rem;
+    }
+
+    .infidive-section h2 {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      margin: 0;
+      color: var(--ia-ink);
+      font-size: 1.28rem;
+      font-weight: 800;
+    }
+
+    .infidive-section h2::before {
+      width: 0.34rem;
+      height: 1.5rem;
+      content: "";
+      background: linear-gradient(180deg, #ff6f6f, #55c9cf);
+      border-radius: 999px;
+    }
+
+    .infidive-section-kicker {
+      color: var(--ia-muted);
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .infidive-section p,
+    .infidive-section li {
+      color: var(--ia-muted);
+      font-size: 0.96rem;
+      line-height: 1.85;
+    }
+
+    .infidive-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .infidive-grid-two {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .infidive-mini-card {
+      min-height: 100%;
+      padding: 1rem;
+      border: 1px solid rgba(109, 125, 128, 0.18);
+      border-radius: var(--ia-radius);
+      background: rgba(255, 255, 255, 0.48);
+    }
+
+    .infidive-mini-card strong {
+      display: block;
+      margin-bottom: 0.42rem;
+      color: var(--ia-ink);
+      font-size: 0.98rem;
+      font-weight: 800;
+      line-height: 1.5;
+    }
+
+    .infidive-job-card {
+      padding: 1rem;
+      border: 1px solid rgba(109, 125, 128, 0.18);
+      border-radius: var(--ia-radius);
+      background: rgba(255, 255, 255, 0.46);
+    }
+
+    .infidive-job-card h3 {
+      margin: 0;
+      color: var(--ia-ink);
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    .infidive-job-card p {
+      margin-top: 0.5rem;
+      font-size: 0.92rem;
+    }
+
+    .infidive-highlight {
+      color: #d85e59;
+      font-weight: 800;
+    }
+
+    .infidive-terminal {
+      margin-top: 1rem;
+      padding: 1rem;
+      color: rgba(255, 255, 255, 0.76);
+      font-family: "Inter", "Noto Sans SC", sans-serif;
+      font-size: 0.9rem;
+      line-height: 1.8;
+      border-radius: var(--ia-radius);
+      background: #111723;
+    }
+
+    .infidive-terminal strong {
+      color: #75d9de;
+    }
+
+    .infidive-contact-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 220px;
+      gap: 1.25rem;
+      align-items: center;
+    }
+
+    .infidive-qr {
+      width: min(220px, 100%);
+      margin: 0 auto;
+      border-radius: var(--ia-radius);
+      box-shadow: 0 18px 48px rgba(35, 48, 52, 0.18);
+    }
+
+    .infidive-contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 960px) {
+      .infidive-hero,
+      .infidive-grid,
+      .infidive-grid-two,
+      .infidive-contact-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .infidive-hero-main {
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .infidive-page {
+        width: min(100% - 1rem, 1120px);
+      }
+
+      .infidive-hero-main,
+      .infidive-side-card,
+      .infidive-section {
+        padding: 1rem;
+      }
+
+      .infidive-title {
+        font-size: 2.18rem;
+      }
+
+      .infidive-contact-actions .ia-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body class="pt-24" data-base-path="../">
+  <main class="infidive-page">
+    <a class="infidive-back" href="../partners.html" aria-label="返回合作与导师">← 返回合作与导师</a>
+
+    <section class="infidive-hero" aria-labelledby="infidive-title">
+      <div class="infidive-panel infidive-hero-main">
+        <div class="infidive-hero-content">
+          <span class="infidive-badge">创业招聘</span>
+          <h1 id="infidive-title" class="infidive-title">我们在做<br />下一种内容形态。</h1>
+          <p class="infidive-hero-copy">
+            产品 <strong>infiDive</strong> 是 AI 原生的互动内容平台，让全球用户不只是“看”故事，而是走进去，亲手改变它。
+          </p>
+          <p class="infidive-hero-copy">
+            构建下一代 AI 原生互动内容平台，面向美国市场，已完成 <strong>Seed 轮融资</strong>。
+          </p>
+          <div class="infidive-chip-row" aria-label="关键信息">
+            <span class="infidive-chip">清华科技园 · 创新大厦 A 座</span>
+            <span class="infidive-chip">Seed 轮已完成</span>
+            <span class="infidive-chip">第一版 9 月上线</span>
+            <span class="infidive-chip">面向全球市场</span>
+          </div>
+          <div class="infidive-belief">
+            // 潜入梦 == <strong>dive in</strong>：潜入梦境般的故事世界
+          </div>
+        </div>
+      </div>
+
+      <aside class="infidive-side" aria-label="招聘重点">
+        <div class="infidive-panel infidive-side-card">
+          <div class="infidive-side-label">Position</div>
+          <div class="infidive-side-value">全栈研发实习生</div>
+          <p class="infidive-side-note">在读硕博生 / 有硬核作品的高年级本科生。</p>
+        </div>
+        <div class="infidive-panel infidive-side-card">
+          <div class="infidive-side-label">Availability</div>
+          <div class="infidive-side-value">长期、稳定到岗</div>
+          <p class="infidive-side-note">能投入 2026 年 8-9 月产品冲刺期。</p>
+        </div>
+        <div class="infidive-panel infidive-side-card">
+          <div class="infidive-side-label">First Seats</div>
+          <div class="infidive-side-value">现在加入，你是前 10 号位。</div>
+          <p class="infidive-side-note">你入职第一个月写的代码，会被真实的全球用户用到。</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="infidive-panel infidive-section">
+      <div class="infidive-section-head">
+        <h2>我们是谁</h2>
+        <span class="infidive-section-kicker">01 · Company</span>
+      </div>
+      <div class="infidive-grid-two">
+        <div class="infidive-mini-card">
+          <strong>潜入梦科技，2026 年成立</strong>
+          <p>产品面向全球用户，是英文产品、海外市场，第一版今年 9 月上线。</p>
+        </div>
+        <div class="infidive-mini-card">
+          <strong>节奏很快，代码会上线</strong>
+          <p>已完成 Seed 轮融资，你写的代码会直接面对真实用户。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="infidive-panel infidive-section">
+      <div class="infidive-section-head">
+        <h2>创始人</h2>
+        <span class="infidive-section-kicker">02 · Hony</span>
+      </div>
+      <div class="infidive-grid">
+        <div class="infidive-mini-card">
+          <strong>黄毅 Hony</strong>
+          <p>电子科技大学 2010 届校友，前字节跳动抖音生活服务「内容与创作者平台」负责人，管理 200+ 人团队，管理业务年交易规模超千亿。</p>
+        </div>
+        <div class="infidive-mini-card">
+          <strong>连续创业者</strong>
+          <p>抹茶美妆创始人，3500 万注册用户，三轮超千万元美金融资，连续三年美业 App 榜首。</p>
+        </div>
+        <div class="infidive-mini-card">
+          <strong>产品与创业经历</strong>
+          <p>人人网上最年轻专家级产品经理；Forbes 30 Under 30；胡润 30x30 创业领袖。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="infidive-panel infidive-section">
+      <div class="infidive-section-head">
+        <h2>我们怎么干活</h2>
+        <span class="infidive-section-kicker">03 · Workflow</span>
+      </div>
+      <div class="infidive-grid">
+        <div class="infidive-mini-card">
+          <strong>AI-native 不是 PR 词，是日常</strong>
+          <p>研发全员 Claude Code / Codex，模型 API 管够，每位成员还有一台跑在云端的专属 AI Agent，陪你改造、陪你命名。</p>
+        </div>
+        <div class="infidive-mini-card">
+          <strong>Vibe coding 是默认工作方式</strong>
+          <p>你的产出上限 = 想法 x AI 杠杆，不是工时 x 流程。</p>
+        </div>
+        <div class="infidive-mini-card">
+          <strong>零大厂流程税</strong>
+          <p>直接和创始人讨论问题，周三的想法，周五就能上线。</p>
+        </div>
+      </div>
+      <div class="infidive-terminal">
+        $ we_believe --check<br />
+        → 在 AI 工具爆发的年轻人，<br />
+        对这个时代的理解<strong>不输任何“资深”</strong>
+      </div>
+    </section>
+
+    <section class="infidive-panel infidive-section">
+      <div class="infidive-section-head">
+        <h2>我们招什么人</h2>
+        <span class="infidive-section-kicker">04 · Roles</span>
+      </div>
+      <div class="infidive-mini-card mb-4">
+        <strong>本次校友合作重点：全栈研发实习生</strong>
+        <p>面向在读硕博生 / 有硬核作品的高年级本科生。能长期、稳定到岗，能投入 2026 年 8-9 月产品冲刺期。</p>
+      </div>
+      <div class="infidive-grid-two">
+        <div class="infidive-job-card">
+          <h3>全栈工程师</h3>
+          <p>毕业 3 年内 / 研究生、博士在读优先。（本科高年级有硬核作品也可）</p>
+        </div>
+        <div class="infidive-job-card">
+          <h3>资深工程师</h3>
+          <p>5 年+，Agent / LLM 应用方向，带过完整的 0→1 上线。</p>
+        </div>
+        <div class="infidive-job-card">
+          <h3>设计师</h3>
+          <p>AI 美术策划方向，关注角色一致性、AI 视频工作流和事实在线。</p>
+        </div>
+        <div class="infidive-job-card">
+          <h3>产品经理</h3>
+          <p>AI 产品经验，海外内容产品方向。</p>
+        </div>
+      </div>
+      <p class="mt-4">
+        <span class="infidive-highlight">不看出身看作品：</span>GitHub、黑客松、你折腾过的任何东西。你做过什么，比你待过哪里重要。
+      </p>
+    </section>
+
+    <section class="infidive-panel infidive-section">
+      <div class="infidive-section-head">
+        <h2>给什么</h2>
+        <span class="infidive-section-kicker">05 · Offer</span>
+      </div>
+      <div class="infidive-grid">
+        <div class="infidive-mini-card">
+          <strong>现金 + 期权</strong>
+          <p>实习日薪 ¥200-500，按能力定档；转正后按应届档授予期权。</p>
+        </div>
+        <div class="infidive-mini-card">
+          <strong>顶配 AI 工具链</strong>
+          <p>模型 API 管够，研发工作围绕 AI 工具展开。</p>
+        </div>
+        <div class="infidive-mini-card">
+          <strong>与创始人共事</strong>
+          <p>成长密度拉满，拥有真实产品 owner 机会和核心团队带教。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="infidive-panel infidive-section">
+      <div class="infidive-contact-layout">
+        <div>
+          <div class="infidive-section-head">
+            <h2>直接和创始人聊</h2>
+            <span class="infidive-section-kicker">Dive In</span>
+          </div>
+          <p>觉得对味，可以直接添加创始人微信。加微信请备注：<span class="infidive-highlight">岗位 + 一个你最得意的作品链接</span>。</p>
+          <p class="mt-2">也可以投递简历至 <span class="infidive-highlight">hr@infdive.com</span>。</p>
+          <p class="mt-2">潜入梦科技 · infiDive · 北京 · 清华科技园创新大厦 A 座</p>
+          <div class="infidive-contact-actions">
+            <a class="ia-btn ia-btn-primary" href="mailto:hr@infdive.com">发送简历</a>
+            <a class="ia-btn" href="../partners.html">返回合作与导师</a>
+          </div>
+        </div>
+        <img class="infidive-qr" src="../assets/images/partners/infidive/wechat-qr.png" alt="添加 infiDive 创始人微信二维码" />
+      </div>
+    </section>
+  </main>
+</body>
+</html>

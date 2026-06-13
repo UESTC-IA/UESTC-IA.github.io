@@ -2,6 +2,7 @@
   const advisorsRoot = document.getElementById("advisorsGrid");
   const orgsRoot = document.getElementById("organizationsGrid");
   const partnersRoot = document.getElementById("partnersGrid");
+  const cooperationRoot = document.getElementById("cooperationInfoGrid");
   if (!window.IA_DATA) return;
 
   const escapeHTML = (value) =>
@@ -66,11 +67,41 @@
     `;
   }
 
+  function cooperationCard(item) {
+    return `
+      <a class="ia-card block p-6 no-underline" href="${escapeHTML(item.url)}"${linkAttrs(item.url)} aria-label="${escapeHTML(item.name)}创业招聘">
+        <div class="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+          <div class="min-w-0">
+            <h3 class="ia-text-ink text-2xl font-bold leading-tight">
+              <span class="ia-text-accent">${escapeHTML(item.type)}</span>
+              <span class="mx-2 ia-text-muted">·</span>
+              <span>${escapeHTML(item.name)}</span>
+            </h3>
+            <p class="ia-text-muted mt-4 max-w-3xl text-sm leading-7">${escapeHTML(item.description)}</p>
+            <p class="ia-text-primary mt-4 text-base font-bold leading-7">${escapeHTML(item.role)}</p>
+            <p class="ia-text-muted mt-2 max-w-3xl text-sm leading-7">${escapeHTML(item.schedule)}</p>
+          </div>
+          <div class="shrink-0 rounded-lg border border-[var(--ia-line)] bg-white/45 p-4 lg:w-64">
+            <div class="ia-text-muted text-xs font-bold uppercase">Location</div>
+            <div class="ia-text-ink mt-1 text-sm font-bold">${escapeHTML(item.location)}</div>
+            <div class="ia-text-muted mt-4 text-xs font-bold uppercase">Type</div>
+            <div class="ia-text-ink mt-1 text-sm font-bold">${escapeHTML(item.type)}</div>
+            <div class="ia-btn ia-btn-primary mt-5 w-full">查看详情</div>
+          </div>
+        </div>
+      </a>
+    `;
+  }
+
   if (orgsRoot) {
     orgsRoot.innerHTML = window.IA_DATA.organizations.map(logoTile).join("");
   }
 
   if (partnersRoot) {
     partnersRoot.innerHTML = window.IA_DATA.partners.map(logoTile).join("");
+  }
+
+  if (cooperationRoot) {
+    cooperationRoot.innerHTML = (window.IA_DATA.cooperationInfos || []).map(cooperationCard).join("");
   }
 })();
