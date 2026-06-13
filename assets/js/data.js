@@ -226,6 +226,18 @@ window.IA_DATA = {
     },
   ],
 
+  cooperationInfos: [
+    {
+      name: "infiDive（潜入梦科技）",
+      type: "创业招聘",
+      role: "全栈研发实习生，在读硕博生 / 有硬核作品的高年级本科生",
+      location: "北京·清华科技园",
+      schedule: "能长期、稳定到岗，能投入 2026 年 8-9 月产品上线阶段",
+      url: "partners/infidive.html",
+      description: "构建下一代 AI 原生互动内容平台，面向美国市场，已完成 Seed 轮融资",
+    },
+  ],
+
   memberGroups: [
     {
       name: "主席团",

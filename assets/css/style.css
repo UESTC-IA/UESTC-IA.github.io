@@ -665,14 +665,17 @@ img {
     opacity: 0;
     transform: translateX(-50%) translateY(6px) scale(0.85);
   }
+
   12% {
     opacity: 1;
     transform: translateX(-50%) translateY(0) scale(1);
   }
+
   70% {
     opacity: 1;
     transform: translateX(-50%) translateY(0) scale(1);
   }
+
   100% {
     opacity: 0;
     transform: translateX(-50%) translateY(-8px) scale(0.9);
