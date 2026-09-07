@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="联系我们。" />
+    <title>联系我们</title>
+    <link rel="icon" href="assets/images/logo.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&amp;family=Noto+Sans+SC:wght@300;400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/email.css" />
+    <script src="assets/js/email.js" defer></script>
+  </head>
+  <body class="email-page home-immersive">
+    <main class="email-main">
+      <section class="email-hero" aria-labelledby="email-title">
+        <div class="email-content">
+          <header class="email-header">
+            <h1 id="email-title" class="email-title">Contact us</h1>
+          </header>
+
+          <form id="email-form" class="email-form" novalidate>
+            <div class="email-field">
+              <label for="recipient">收件人</label>
+              <div class="email-recipient">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 6h16v12H4z" />
+                  <path d="m4 7 8 6 8-6" />
+                </svg>
+                <input id="recipient" type="email" value="astrab@yeah.net" readonly />
+              </div>
+            </div>
+
+            <div class="email-field">
+              <label for="subject">主题</label>
+              <input
+                id="subject"
+                name="subject"
+                type="text"
+                maxlength="100"
+                autocomplete="off"
+                required
+              />
+            </div>
+
+            <div class="email-field email-field-message">
+              <label for="message">邮件内容</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="9"
+                maxlength="2000"
+                required
+              ></textarea>
+            </div>
+
+            <div class="email-actions">
+              <button class="home-contact-link email-action email-send" type="submit">
+                <span>发送邮件</span>
+                <svg class="email-action-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14" />
+                  <path d="m13 6 6 6-6 6" />
+                </svg>
+              </button>
+
+              <a class="home-contact-link email-action email-home-link" href="index.html">
+                <span>了解 UESTC IA</span>
+                <svg class="email-action-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14" />
+                  <path d="m13 6 6 6-6 6" />
+                </svg>
+              </a>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

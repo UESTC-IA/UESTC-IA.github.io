@@ -181,20 +181,12 @@
       /* --- 特性列表 (企业介绍) --- */
       .feature-list {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 20px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 32px;
+        margin-top: 32px;
       }
       .feature-item {
-        background: #fafafa; /* 极浅的灰底 */
-        padding: 24px;
-        border-radius: 12px;
-        border: 1px solid transparent;
-        transition: all 0.3s ease;
-      }
-      .feature-item:hover {
-        background: white;
-        border-color: var(--border-light);
-        box-shadow: var(--shadow-hover);
+        min-width: 0;
       }
       .feature-title {
         color: var(--color-black);
@@ -397,7 +389,8 @@
             width: 100%; 
         }
         .feature-list {
-            grid-template-columns: 1fr; 
+            grid-template-columns: 1fr;
+            gap: 28px;
         }
       }
     </style>
@@ -437,13 +430,6 @@
         
         <!-- 正文区域 -->
         <div class="content-body">
-          
-          <!-- 合作背景 -->
-          <div class="section">
-            <h2>合作背景</h2>
-            <p>在电子科技大学，我们习惯了用代码构建世界，用公式推导真理。但技术总是在竞争中飞速迭代，昨日的 SOTA 转瞬即逝，而人文关怀的温度却是永续的。</p>
-            <p>交叉学科协会致力于打破工科与文科的壁垒，构建起连接 AI 与视觉艺术的桥梁。我们引入了在视觉制作领域的创业合作伙伴——<span class="highlight">辰境绘卷</span>，这里将是你探索 “<span class="highlight">Tech+Art</span>” 的最佳试验场。</p>
-          </div>
           
           <!-- 企业介绍 -->
           <div class="section">

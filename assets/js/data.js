@@ -2,7 +2,7 @@ window.IA_DATA = {
   activities: [
     {
       date: "2026.04.23",
-      title: "导师看了不皱眉的科研绘图教程（第二期）",
+      title: "科研绘图教程（第二期）",
       type: "科研绘图",
       status: "Past",
       description: "以顶会录用案例，拆解落地实操细节，帮你做出严谨、精准、高质量科研绘图",
@@ -16,7 +16,7 @@ window.IA_DATA = {
     },
     {
       date: "2026.04.09",
-      title: "导师看了不皱眉的科研绘图教程（第一期）",
+      title: "科研绘图教程（第一期）",
       type: "科研绘图",
       status: "Past",
       description: "以顶会录用案例，拆解科研绘图的底层逻辑、格式规范、细节设计和质感提升技巧",
@@ -256,6 +256,8 @@ window.IA_DATA = {
         { name: "张煦", url: "https://xuzhang-x-z.github.io" },
         { name: "郭博成" },
         { name: "张博涵" },
+        { name: "梁宇琦" },
+        { name: "冯普明" },
       ],
     },
   ],
