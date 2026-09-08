@@ -182,6 +182,71 @@
   margin-top: -0.35rem;
 }
 
+.email-community {
+  display: flex;
+  width: fit-content;
+  max-width: 100%;
+  align-items: center;
+  gap: 1.35rem;
+  margin: clamp(2.5rem, 5vw, 3.5rem) auto 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(109, 125, 128, 0.24);
+}
+
+.email-community-qr {
+  display: block;
+  width: clamp(132px, 16vw, 164px);
+  flex: 0 0 auto;
+  padding: 0.45rem;
+  border: 1px solid rgba(109, 125, 128, 0.18);
+  border-radius: var(--ia-radius);
+  background: #fff;
+  box-shadow: 0 12px 36px rgba(52, 68, 72, 0.1);
+  transition: border-color 180ms ease, transform 180ms ease;
+}
+
+.email-community-qr:hover {
+  border-color: rgba(111, 143, 146, 0.42);
+  transform: translateY(-2px);
+}
+
+.email-community-qr:focus-visible {
+  outline: 3px solid rgba(77, 111, 115, 0.2);
+  outline-offset: 3px;
+}
+
+.email-community-qr img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.email-community-copy {
+  max-width: 290px;
+}
+
+.email-community-label {
+  margin: 0 0 0.45rem;
+  color: var(--ia-primary-deep);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.email-community-copy h2 {
+  margin: 0;
+  color: var(--ia-ink);
+  font-size: 1.18rem;
+  line-height: 1.35;
+}
+
+.email-community-copy p:last-child {
+  margin: 0.55rem 0 0;
+  color: var(--ia-muted);
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
 .email-action-arrow {
   width: 17px;
   height: 17px;
@@ -241,11 +306,18 @@
   .email-field textarea {
     min-height: 150px;
   }
+
+  .email-community {
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .email-send:hover,
   .email-home-link:hover,
+  .email-community-qr:hover,
   .email-action:hover .email-action-arrow {
     transform: none;
   }
