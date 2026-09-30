@@ -499,6 +499,142 @@ img {
   object-fit: contain;
 }
 
+.ia-university-board {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--ia-line);
+  border-radius: calc(var(--ia-radius) + 0.35rem);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(232, 239, 239, 0.64)),
+    radial-gradient(circle at 15% 20%, rgba(111, 143, 146, 0.14), transparent 30%);
+  box-shadow: var(--ia-shadow-soft);
+}
+
+.ia-university-board::before {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background:
+    linear-gradient(90deg, transparent 49.8%, rgba(111, 143, 146, 0.045) 50%, transparent 50.2%),
+    linear-gradient(transparent 49.8%, rgba(111, 143, 146, 0.045) 50%, transparent 50.2%);
+  background-size: 92px 92px;
+  opacity: 0.7;
+}
+
+.ia-university-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  padding: 0.65rem;
+}
+
+.ia-university-item {
+  display: flex;
+  min-height: 128px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 0.8rem;
+  color: var(--ia-ink);
+  text-align: center;
+  text-decoration: none;
+  border-radius: var(--ia-radius);
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+.ia-university-item:hover {
+  background: rgba(255, 255, 255, 0.74);
+  transform: translateY(-2px);
+}
+
+.ia-university-logo {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 58px;
+  align-items: center;
+  justify-content: center;
+}
+
+.ia-university-logo img {
+  display: block;
+  width: auto;
+  max-width: 164px;
+  height: auto;
+  max-height: 58px;
+  object-fit: contain;
+}
+
+.ia-university-logo.is-seal img {
+  width: 58px;
+  height: 58px;
+}
+
+.ia-university-logo.is-nus {
+  width: 140px;
+  overflow: hidden;
+}
+
+.ia-university-logo.is-nus img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 368px;
+  max-width: none;
+  height: 58px;
+  max-height: none;
+}
+
+.ia-university-fallback {
+  display: none;
+  width: 54px;
+  height: 54px;
+  align-items: center;
+  justify-content: center;
+  color: var(--ia-primary-deep);
+  font-size: 0.95rem;
+  font-weight: 700;
+  border: 1px solid var(--ia-line);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.ia-university-logo.is-missing img {
+  display: none;
+}
+
+.ia-university-logo.is-missing .ia-university-fallback {
+  display: flex;
+}
+
+.ia-university-copy {
+  display: block;
+  min-width: 0;
+}
+
+.ia-university-copy strong,
+.ia-university-copy small {
+  display: block;
+}
+
+.ia-university-copy strong {
+  font-size: 0.92rem;
+  line-height: 1.35;
+}
+
+.ia-university-copy small {
+  max-width: 180px;
+  margin-top: 0.22rem;
+  overflow: hidden;
+  color: var(--ia-muted);
+  font-size: 0.62rem;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .ia-avatar {
   width: 72px;
   height: 72px;
@@ -1088,6 +1224,24 @@ img {
 
   .ia-page-subtitle {
     font-size: 1rem;
+  }
+
+  .ia-university-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 0.4rem;
+  }
+
+  .ia-university-item {
+    min-height: 120px;
+    padding: 0.9rem 0.35rem;
+  }
+
+  .ia-university-logo img {
+    max-width: 132px;
+  }
+
+  .ia-university-copy small {
+    max-width: 138px;
   }
 
   .home-title {
