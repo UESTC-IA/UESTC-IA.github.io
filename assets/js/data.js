@@ -219,12 +219,6 @@ window.IA_DATA = {
       url: "https://www.pku.edu.cn/",
     },
     {
-      name: "复旦大学",
-      nameEn: "Fudan University",
-      image: "assets/images/partners/universities/fudan.png",
-      url: "https://www.fudan.edu.cn/",
-    },
-    {
       name: "上海交通大学",
       nameEn: "Shanghai Jiao Tong University",
       image: "assets/images/partners/universities/sjtu.png",
@@ -235,6 +229,12 @@ window.IA_DATA = {
       nameEn: "Zhejiang University",
       image: "assets/images/partners/universities/zju.png",
       url: "https://www.zju.edu.cn/",
+    },
+    {
+      name: "复旦大学",
+      nameEn: "Fudan University",
+      image: "assets/images/partners/universities/fudan.png",
+      url: "https://www.fudan.edu.cn/",
     },
     {
       name: "南京大学",
