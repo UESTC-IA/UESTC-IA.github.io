@@ -174,9 +174,9 @@ window.IA_DATA = {
 
   organizations: [
     {
-      name: "生命科学与技术学院",
-      image: "assets/images/partners/orgs/uestc-life.png",
-      url: "https://www.life.uestc.edu.cn/",
+      name: "智元 AGIBOT",
+      image: "assets/images/partners/orgs/agibot.png",
+      url: "https://www.agibot.com/",
       type: "战略支撑单位",
     },
     {
@@ -186,9 +186,9 @@ window.IA_DATA = {
       type: "战略支撑单位",
     },
     {
-      name: "蓝耘科技 LANYUN",
-      image: "assets/images/partners/orgs/lanyun.png",
-      url: "https://www.lanyun.net/",
+      name: "中国移动咪咕",
+      image: "assets/images/partners/orgs/migu.png",
+      url: "",
       type: "战略支撑单位",
     },
     {
@@ -198,9 +198,9 @@ window.IA_DATA = {
       type: "战略支撑单位",
     },
     {
-      name: "中国移动咪咕",
-      image: "assets/images/partners/orgs/migu.png",
-      url: "",
+      name: "蓝耘科技 LANYUN",
+      image: "assets/images/partners/orgs/lanyun.png",
+      url: "https://www.lanyun.net/",
       type: "战略支撑单位",
     },
   ],
@@ -293,6 +293,18 @@ window.IA_DATA = {
   ],
 
   partners: [
+    {
+      name: "生命科学与技术学院",
+      image: "assets/images/partners/orgs/uestc-life.png",
+      url: "https://www.life.uestc.edu.cn/",
+      type: "合作伙伴",
+    },
+    {
+      name: "电子科技大学立人班",
+      image: "",
+      url: "",
+      type: "合作伙伴",
+    },
     {
       name: "辰境绘卷",
       image: "assets/images/partners/orgs/changing-view.png",
