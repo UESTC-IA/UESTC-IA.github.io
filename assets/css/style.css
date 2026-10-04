@@ -560,31 +560,9 @@ img {
 
 .ia-university-logo img {
   display: block;
-  width: auto;
-  max-width: 164px;
-  height: auto;
-  max-height: 58px;
-  object-fit: contain;
-}
-
-.ia-university-logo.is-seal img {
   width: 58px;
   height: 58px;
-}
-
-.ia-university-logo.is-nus {
-  width: 140px;
-  overflow: hidden;
-}
-
-.ia-university-logo.is-nus img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 368px;
-  max-width: none;
-  height: 58px;
-  max-height: none;
+  object-fit: contain;
 }
 
 .ia-university-fallback {

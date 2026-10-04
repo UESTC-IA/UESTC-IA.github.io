@@ -95,12 +95,9 @@
   }
 
   function universityTile(item) {
-    const allowedLogoStyles = ["seal", "wordmark", "nus"];
-    const logoStyle = allowedLogoStyles.includes(item.logoStyle) ? item.logoStyle : "wordmark";
-    const logoClass = `is-${logoStyle}`;
     return `
       <a class="ia-university-item" href="${escapeHTML(item.url)}"${linkAttrs(item.url)} aria-label="${escapeHTML(item.name)}">
-        <span class="ia-university-logo ${logoClass}">
+        <span class="ia-university-logo">
           <img src="${escapeHTML(item.image)}" alt="" loading="lazy" onerror="this.closest('.ia-university-logo').classList.add('is-missing')">
           <span class="ia-university-fallback" aria-hidden="true">${escapeHTML(item.name.slice(0, 2))}</span>
         </span>
